@@ -25,6 +25,7 @@ python run_text_classification.py \
 
 ## File Structure
 
+```
    BERT-for-Sequence-Labeling-and-Text-Classification
   |____ bert store google's [BERT code](https://github.com/google-research/bert)
   |____ data store task data set
@@ -34,7 +35,88 @@ python run_text_classification.py \
   |____ run_text_classification.py for Text Classification Task
   |____ run_sequence_labeling_and_text_classification.py for join task (come soon!)  
   |____ tf_metrics.py for evaluation model 
-    
+```
+
+## How to add a new task
+
+Just write a small piece of code according to the existing template!
+
+### Data
+For example, If you have a new classification task [QQP](https://data.quora.com/First-Quora-Dataset-Release-Question-Pairs).
+
+Before running this example you must download the [GLUE data](https://gluebenchmark.com/tasks) by running [this script](https://gist.github.com/W4ngatang/60c2bdb54d156a41194446737ce03e2e).
+
+### Code
+Now, write code!
+
+```
+class QqpProcessor(DataProcessor):
+    """Processor for the QQP data set."""
+
+    def get_train_examples(self, data_dir):
+        """See base class."""
+        return self._create_examples(
+            self._read_tsv(os.path.join(data_dir, "train.tsv")), "train")
+
+    def get_dev_examples(self, data_dir):
+        """See base class."""
+        return self._create_examples(
+            self._read_tsv(os.path.join(data_dir, "dev.tsv")), "dev")
+
+    def get_test_examples(self, data_dir):
+        """See base class."""
+        return self._create_examples(
+            self._read_tsv(os.path.join(data_dir, "test.tsv")), "test")
+
+    def get_labels(self):
+        """See base class."""
+        return ["0", "1"]
+
+    def _create_examples(self, lines, set_type):
+        """Creates examples for the training and dev sets."""
+        examples = []
+        for (i, line) in enumerate(lines):
+            if i == 0 or len(line)!=6:
+                continue
+            guid = "%s-%s" % (set_type, i)
+            text_a = tokenization.convert_to_unicode(line[3])
+            text_b = tokenization.convert_to_unicode(line[4])
+            if set_type == "test":
+                label = "1"
+            else:
+                label = tokenization.convert_to_unicode(line[5])
+            examples.append(
+                InputExample(guid=guid, text_a=text_a, text_b=text_b, label=label))
+        return examples
+ ```
+ 
+ Registration task
+ 
+ ```
+ def main(_):
+    tf.logging.set_verbosity(tf.logging.INFO)
+    processors = {
+        "qqp": QqpProcessor,
+    }
+```
+
+### Run
+```
+python run_text_classification.py \
+--task_name=qqp \
+--do_train=true \
+--do_eval=true \
+--data_dir=data/snips_Intent_Detection_and_Slot_Filling \
+--vocab_file=pretrained_model/uncased_L-12_H-768_A-12/vocab.txt \
+--bert_config_file=pretrained_model/uncased_L-12_H-768_A-12/bert_config.json \
+--init_checkpoint=pretrained_model/uncased_L-12_H-768_A-12/bert_model.ckpt \
+--max_seq_length=128 \
+--train_batch_size=32 \
+--learning_rate=2e-5 \
+--num_train_epochs=3.0 \
+--output_dir=./output/qqp_Intent_Detection/
+```
+
 ## Task
 
 Welcome to add!
