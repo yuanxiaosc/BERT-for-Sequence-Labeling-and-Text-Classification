@@ -200,6 +200,113 @@ class Atis_Slot_Filling_Processor(DataProcessor):
             examples.append(InputExample(guid=guid, text=text, label=label))
         return examples
 
+class CoNLL2003NERProcessor(DataProcessor):
+
+    def get_examples(cls, input_file):
+        """Reads a BIO data."""
+        with open(input_file) as f:
+            lines = []
+            words = []
+            labels = []
+            for line in f:
+                contends = line.strip()
+                word = line.strip().split(' ')[0]
+                label = line.strip().split(' ')[-1]
+                if contends.startswith("-DOCSTART-"):
+                    words.append('')
+                    continue
+                if len(contends) == 0 and words[-1] == '.':
+                    l = ' '.join([label for label in labels if len(label) > 0])
+                    w = ' '.join([word for word in words if len(word) > 0])
+                    lines.append([l, w])
+                    words = []
+                    labels = []
+                    continue
+                words.append(word)
+                labels.append(label)
+            return lines
+
+    def get_train_examples(self, data_dir):
+        return self._create_example(
+            self.get_examples(os.path.join(data_dir, "train.txt")), "train")
+
+    def get_dev_examples(self, data_dir):
+        return self._create_example(
+            self.get_examples(os.path.join(data_dir, "dev.txt")), "dev")
+
+    def get_test_examples(self,data_dir):
+        return self._create_example(
+            self.get_examples(os.path.join(data_dir, "test.txt")), "test")
+
+    def get_labels(self):
+        return ['[Padding]', '[##WordPiece]', '[CLS]', '[SEP]', "B-MISC", "I-MISC", "O", "B-PER", "I-PER", "B-ORG", "I-ORG", "B-LOC", "I-LOC"]
+
+    def _create_example(self, lines, set_type):
+        examples = []
+        for (i, line) in enumerate(lines):
+            guid = "%s-%s" % (set_type, i)
+            text = tokenization.convert_to_unicode(line[1])
+            label = tokenization.convert_to_unicode(line[0])
+            examples.append(InputExample(guid=guid, text=text, label=label))
+        return examples
+
+class Snips_Slot_Filling_Processor(DataProcessor):
+
+    def get_examples(self, data_dir):
+        path_seq_in = os.path.join(data_dir, "seq.in")
+        path_seq_out = os.path.join(data_dir, "seq.out")
+        seq_in_list, seq_out_list = [], []
+        with open(path_seq_in) as seq_in_f:
+            with open(path_seq_out) as seq_out_f:
+                for seqin, seqout in zip(seq_in_f.readlines(), seq_out_f.readlines()):
+                    seqin = seqin[:-1]  # delete "\n"
+                    seqout = seqout[:-1]
+                    seqin_words = [word for word in seqin.split(" ") if len(word) > 0]
+                    seqout_words = [word for word in seqout.split(" ") if len(word) > 0]
+                    assert len(seqin_words) == len(seqout_words)
+                    seq_in_list.append(" ".join(seqin_words))
+                    seq_out_list.append(" ".join(seqout_words))
+        lines = list(zip(seq_in_list, seq_out_list))
+        return lines
+
+    def get_train_examples(self, data_dir):
+        return self._create_example(self.get_examples(os.path.join(data_dir, "train")), "train")
+
+    def get_dev_examples(self, data_dir):
+        return self._create_example(self.get_examples(os.path.join(data_dir, "valid")), "valid")
+
+    def get_test_examples(self, data_dir):
+        return self._create_example(self.get_examples(os.path.join(data_dir, "test")), "test")
+
+    def get_labels_from_files(self, data_dir):
+        train_data_dir = os.path.join(data_dir, "train")
+        valid_data_dir = os.path.join(data_dir, "valid")
+        test_data_dir = os.path.join(data_dir, "test")
+        path_train_seq_out = os.path.join(train_data_dir, "seq.out")
+        path_valid_seq_out = os.path.join(valid_data_dir, "seq.out")
+        path_test_seq_out  = os.path.join(test_data_dir, "seq.out")
+        def _find_labels(path):
+            with open(path) as seq_out_f:
+                seq_out_list = [seq.replace("\n", '').split(" ") for seq in seq_out_f.readlines()]
+                seq_out_set = set([label for seq in seq_out_list for label in seq])
+                return seq_out_set
+        seq_out_set = list(_find_labels(path_train_seq_out) |
+                           _find_labels(path_valid_seq_out | _find_labels(path_test_seq_out)))
+        seq_out_set.remove("")
+        seq_out_set.sort()
+        return ["[Padding]", "[##WordPiece]", "[CLS]", "[SEP]"] + seq_out_set
+
+    def get_labels(self):
+        return ['[Padding]', '[##WordPiece]', '[CLS]', '[SEP]', 'B-album', 'B-artist', 'B-best_rating', 'B-city', 'B-condition_description', 'B-condition_temperature', 'B-country', 'B-cuisine', 'B-current_location', 'B-entity_name', 'B-facility', 'B-genre', 'B-geographic_poi', 'B-location_name', 'B-movie_name', 'B-movie_type', 'B-music_item', 'B-object_location_type', 'B-object_name', 'B-object_part_of_series_type', 'B-object_select', 'B-object_type', 'B-party_size_description', 'B-party_size_number', 'B-playlist', 'B-playlist_owner', 'B-poi', 'B-rating_unit', 'B-rating_value', 'B-restaurant_name', 'B-restaurant_type', 'B-served_dish', 'B-service', 'B-sort', 'B-spatial_relation', 'B-state', 'B-timeRange', 'B-track', 'B-year', 'I-album', 'I-artist', 'I-city', 'I-country', 'I-cuisine', 'I-current_location', 'I-entity_name', 'I-facility', 'I-genre', 'I-geographic_poi', 'I-location_name', 'I-movie_name', 'I-movie_type', 'I-music_item', 'I-object_location_type', 'I-object_name', 'I-object_part_of_series_type', 'I-object_select', 'I-object_type', 'I-party_size_description', 'I-playlist', 'I-playlist_owner', 'I-poi', 'I-restaurant_name', 'I-restaurant_type', 'I-served_dish', 'I-service', 'I-sort', 'I-spatial_relation', 'I-state', 'I-timeRange', 'I-track', 'O']
+
+    def _create_example(self, lines, set_type):
+        examples = []
+        for (i, line) in enumerate(lines):
+            guid = "%s-%s" % (set_type, i)
+            text = tokenization.convert_to_unicode(line[0])
+            label = tokenization.convert_to_unicode(line[1])
+            examples.append(InputExample(guid=guid, text=text, label=label))
+        return examples
 
 def convert_single_example(ex_index, example, label_list, max_seq_length, tokenizer, mode):
     label_map = {}
@@ -474,6 +581,7 @@ def main(_):
     if os.path.exists(FLAGS.output_dir):
         try:
             os.removedirs(FLAGS.output_dir)
+            os.makedirs(FLAGS.output_dir)
         except:
             tf.logging.info("***** Running evaluation *****")
             tf.logging.warning(FLAGS.output_dir + " is  not empty, here use shutil.rmtree(FLAGS.output_dir)!")
@@ -485,7 +593,9 @@ def main(_):
 
     tf.logging.set_verbosity(tf.logging.INFO)
     processors = {
-        "atis": Atis_Slot_Filling_Processor
+        "atis": Atis_Slot_Filling_Processor,
+        "snips": Snips_Slot_Filling_Processor,
+        "conll2003ner": CoNLL2003NERProcessor,
     }
     if not FLAGS.do_train and not FLAGS.do_eval:
         raise ValueError("At least one of `do_train` or `do_eval` must be True.")
