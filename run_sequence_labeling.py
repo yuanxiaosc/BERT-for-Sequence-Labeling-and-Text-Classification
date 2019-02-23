@@ -172,21 +172,16 @@ class Atis_Slot_Filling_Processor(DataProcessor):
         return self._create_example(self.get_examples(os.path.join(data_dir, "test")), "test")
 
     def get_labels_from_files(self, data_dir):
-        train_data_dir = os.path.join(data_dir, "train")
-        valid_data_dir = os.path.join(data_dir, "valid")
-        test_data_dir = os.path.join(data_dir, "test")
-        path_train_seq_out = os.path.join(train_data_dir, "seq.out")
-        path_valid_seq_out = os.path.join(valid_data_dir, "seq.out")
-        path_test_seq_out  = os.path.join(test_data_dir, "seq.out")
-        def _find_labels(path):
-            with open(path) as seq_out_f:
-                seq_out_list = [seq.replace("\n", '').split(" ") for seq in seq_out_f.readlines()]
-                seq_out_set = set([label for seq in seq_out_list for label in seq])
-                return seq_out_set
-        seq_out_set = list(_find_labels(path_train_seq_out) |
-                           _find_labels(path_valid_seq_out | _find_labels(path_test_seq_out)))
-        seq_out_set.sort()
-        return ["[Padding]", "[##WordPiece]", "[CLS]", "[SEP]"] + seq_out_set
+        label_set = set()
+        for f_type in ["train", "valid", "test"]:
+            seq_out_dir = os.path.join(os.path.join(data_dir, f_type), "seq.out")
+            with open(seq_out_dir) as data_f:
+                seq_sentence_list = [seq.split() for seq in data_f.readlines()]
+                seq_word_list = [word for seq in seq_sentence_list for word in seq]
+                label_set = label_set | set(seq_word_list)
+        label_list = list(label_set)
+        label_list.sort()
+        return ["[Padding]", "[##WordPiece]", "[CLS]", "[SEP]"] + label_list
 
     def get_labels(self):
         return ['[Padding]', '[##WordPiece]', '[CLS]', '[SEP]', 'B-aircraft_code', 'B-airline_code', 'B-airline_name', 'B-airport_code', 'B-airport_name', 'B-arrive_date.date_relative', 'B-arrive_date.day_name', 'B-arrive_date.day_number', 'B-arrive_date.month_name', 'B-arrive_date.today_relative', 'B-arrive_time.end_time', 'B-arrive_time.period_mod', 'B-arrive_time.period_of_day', 'B-arrive_time.start_time', 'B-arrive_time.time', 'B-arrive_time.time_relative', 'B-booking_class', 'B-city_name', 'B-class_type', 'B-compartment', 'B-connect', 'B-cost_relative', 'B-day_name', 'B-day_number', 'B-days_code', 'B-depart_date.date_relative', 'B-depart_date.day_name', 'B-depart_date.day_number', 'B-depart_date.month_name', 'B-depart_date.today_relative', 'B-depart_date.year', 'B-depart_time.end_time', 'B-depart_time.period_mod', 'B-depart_time.period_of_day', 'B-depart_time.start_time', 'B-depart_time.time', 'B-depart_time.time_relative', 'B-economy', 'B-fare_amount', 'B-fare_basis_code', 'B-flight', 'B-flight_days', 'B-flight_mod', 'B-flight_number', 'B-flight_stop', 'B-flight_time', 'B-fromloc.airport_code', 'B-fromloc.airport_name', 'B-fromloc.city_name', 'B-fromloc.state_code', 'B-fromloc.state_name', 'B-meal', 'B-meal_code', 'B-meal_description', 'B-mod', 'B-month_name', 'B-or', 'B-period_of_day', 'B-restriction_code', 'B-return_date.date_relative', 'B-return_date.day_name', 'B-return_date.day_number', 'B-return_date.month_name', 'B-return_date.today_relative', 'B-return_time.period_mod', 'B-return_time.period_of_day', 'B-round_trip', 'B-state_code', 'B-state_name', 'B-stoploc.airport_code', 'B-stoploc.airport_name', 'B-stoploc.city_name', 'B-stoploc.state_code', 'B-time', 'B-time_relative', 'B-today_relative', 'B-toloc.airport_code', 'B-toloc.airport_name', 'B-toloc.city_name', 'B-toloc.country_name', 'B-toloc.state_code', 'B-toloc.state_name', 'B-transport_type', 'I-airline_name', 'I-airport_name', 'I-arrive_date.day_number', 'I-arrive_time.end_time', 'I-arrive_time.period_of_day', 'I-arrive_time.start_time', 'I-arrive_time.time', 'I-arrive_time.time_relative', 'I-city_name', 'I-class_type', 'I-cost_relative', 'I-depart_date.day_number', 'I-depart_date.today_relative', 'I-depart_time.end_time', 'I-depart_time.period_of_day', 'I-depart_time.start_time', 'I-depart_time.time', 'I-depart_time.time_relative', 'I-economy', 'I-fare_amount', 'I-fare_basis_code', 'I-flight_mod', 'I-flight_number', 'I-flight_stop', 'I-flight_time', 'I-fromloc.airport_name', 'I-fromloc.city_name', 'I-fromloc.state_name', 'I-meal_code', 'I-meal_description', 'I-restriction_code', 'I-return_date.date_relative', 'I-return_date.day_number', 'I-return_date.today_relative', 'I-round_trip', 'I-state_name', 'I-stoploc.city_name', 'I-time', 'I-today_relative', 'I-toloc.airport_name', 'I-toloc.city_name', 'I-toloc.state_name', 'I-transport_type', 'O']
@@ -259,10 +254,8 @@ class Snips_Slot_Filling_Processor(DataProcessor):
         with open(path_seq_in) as seq_in_f:
             with open(path_seq_out) as seq_out_f:
                 for seqin, seqout in zip(seq_in_f.readlines(), seq_out_f.readlines()):
-                    seqin = seqin[:-1]  # delete "\n"
-                    seqout = seqout[:-1]
-                    seqin_words = [word for word in seqin.split(" ") if len(word) > 0]
-                    seqout_words = [word for word in seqout.split(" ") if len(word) > 0]
+                    seqin_words = [word for word in seqin.split() if len(word) > 0]
+                    seqout_words = [word for word in seqout.split() if len(word) > 0]
                     assert len(seqin_words) == len(seqout_words)
                     seq_in_list.append(" ".join(seqin_words))
                     seq_out_list.append(" ".join(seqout_words))
@@ -279,22 +272,16 @@ class Snips_Slot_Filling_Processor(DataProcessor):
         return self._create_example(self.get_examples(os.path.join(data_dir, "test")), "test")
 
     def get_labels_from_files(self, data_dir):
-        train_data_dir = os.path.join(data_dir, "train")
-        valid_data_dir = os.path.join(data_dir, "valid")
-        test_data_dir = os.path.join(data_dir, "test")
-        path_train_seq_out = os.path.join(train_data_dir, "seq.out")
-        path_valid_seq_out = os.path.join(valid_data_dir, "seq.out")
-        path_test_seq_out  = os.path.join(test_data_dir, "seq.out")
-        def _find_labels(path):
-            with open(path) as seq_out_f:
-                seq_out_list = [seq.replace("\n", '').split(" ") for seq in seq_out_f.readlines()]
-                seq_out_set = set([label for seq in seq_out_list for label in seq])
-                return seq_out_set
-        seq_out_set = list(_find_labels(path_train_seq_out) |
-                           _find_labels(path_valid_seq_out | _find_labels(path_test_seq_out)))
-        seq_out_set.remove("")
-        seq_out_set.sort()
-        return ["[Padding]", "[##WordPiece]", "[CLS]", "[SEP]"] + seq_out_set
+        label_set = set()
+        for f_type in ["train", "valid", "test"]:
+            seq_out_dir = os.path.join(os.path.join(data_dir, f_type), "seq.out")
+            with open(seq_out_dir) as data_f:
+                seq_sentence_list = [seq.split() for seq in data_f.readlines()]
+                seq_word_list = [word for seq in seq_sentence_list for word in seq]
+                label_set = label_set | set(seq_word_list)
+        label_list = list(label_set)
+        label_list.sort()
+        return ["[Padding]", "[##WordPiece]", "[CLS]", "[SEP]"] + label_list
 
     def get_labels(self):
         return ['[Padding]', '[##WordPiece]', '[CLS]', '[SEP]', 'B-album', 'B-artist', 'B-best_rating', 'B-city', 'B-condition_description', 'B-condition_temperature', 'B-country', 'B-cuisine', 'B-current_location', 'B-entity_name', 'B-facility', 'B-genre', 'B-geographic_poi', 'B-location_name', 'B-movie_name', 'B-movie_type', 'B-music_item', 'B-object_location_type', 'B-object_name', 'B-object_part_of_series_type', 'B-object_select', 'B-object_type', 'B-party_size_description', 'B-party_size_number', 'B-playlist', 'B-playlist_owner', 'B-poi', 'B-rating_unit', 'B-rating_value', 'B-restaurant_name', 'B-restaurant_type', 'B-served_dish', 'B-service', 'B-sort', 'B-spatial_relation', 'B-state', 'B-timeRange', 'B-track', 'B-year', 'I-album', 'I-artist', 'I-city', 'I-country', 'I-cuisine', 'I-current_location', 'I-entity_name', 'I-facility', 'I-genre', 'I-geographic_poi', 'I-location_name', 'I-movie_name', 'I-movie_type', 'I-music_item', 'I-object_location_type', 'I-object_name', 'I-object_part_of_series_type', 'I-object_select', 'I-object_type', 'I-party_size_description', 'I-playlist', 'I-playlist_owner', 'I-poi', 'I-restaurant_name', 'I-restaurant_type', 'I-served_dish', 'I-service', 'I-sort', 'I-spatial_relation', 'I-state', 'I-timeRange', 'I-track', 'O']
