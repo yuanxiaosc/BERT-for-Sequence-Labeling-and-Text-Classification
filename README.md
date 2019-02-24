@@ -28,6 +28,7 @@ python run_text_classification.py \
 ```
    BERT-for-Sequence-Labeling-and-Text-Classification
   |____ bert store google's [BERT code](https://github.com/google-research/bert)
+  |____ calculating_model_score store model test report
   |____ data store task data set
   |____ output store model output
   |____ pretrained_model store [BERT pretrained model](https://github.com/google-research/bert)
@@ -127,3 +128,5 @@ Welcome to add!
 |Atis Joint Slot Filling and Intent Prediction||https://github.com/MiuLab/SlotGated-SLU/tree/master/data/atis|
 |Snips Joint Slot Filling and Intent Prediction||https://github.com/MiuLab/SlotGated-SLU/tree/master/data/snips|
 |[GLUE](https://gluebenchmark.com/)|||
+
+
