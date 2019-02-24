@@ -22,3 +22,12 @@ def show_metrics(y_test, y_predict, labels=[1,2,3,4]):
     print('分类报告:\n', metrics.classification_report(y_test, y_predict))  # 分类报告输出
 
 #show_metrics(y_test=y_test, y_predict=y_predict, labels=[1,2,3,4])
+def delete_both_sides_is_O_word(y_test_list, clean_y_predict_list):
+    new_y_test_list, new_clean_y_predict_list = [], []
+    for test, pred in zip(y_test_list, clean_y_predict_list):
+        if test=="O" and pred=="O":
+            continue
+        new_y_test_list.append(test)
+        new_clean_y_predict_list.append(pred)
+    assert len(new_y_test_list)==len(new_clean_y_predict_list)
+    return new_y_test_list, new_clean_y_predict_list
