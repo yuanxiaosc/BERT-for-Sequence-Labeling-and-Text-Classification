@@ -479,8 +479,8 @@ def create_model(bert_config, is_training, input_ids, input_mask,
         per_example_loss = -tf.reduce_sum(one_hot_labels * log_probs, axis=-1)
         loss = tf.reduce_sum(per_example_loss)
         probabilities = tf.nn.softmax(logits, axis=-1)
-        predict = tf.argmax(probabilities, axis=-1)
-        return (loss, per_example_loss, logits, predict)
+        predicts = tf.argmax(probabilities, axis=-1)
+        return (loss, per_example_loss, logits, predicts)
         ##########################################################################
 
 
@@ -536,15 +536,22 @@ def model_fn_builder(bert_config, num_labels, init_checkpoint, learning_rate,
             def metric_fn(per_example_loss, label_ids, logits):
                 # def metric_fn(label_ids, logits):
                 predictions = tf.argmax(logits, axis=-1, output_type=tf.int32)
-                pos_indices_list = list(range(num_labels))[4:]  #["[Padding]","##WordPiece", "[CLS]", "[SEP]"] + seq_out_set
-                precision = tf_metrics.precision(label_ids, predictions, num_labels, pos_indices_list, average="macro")
-                recall = tf_metrics.recall(label_ids, predictions, num_labels, pos_indices_list, average="macro")
-                f = tf_metrics.f1(label_ids, predictions, num_labels, pos_indices_list, average="macro")
+                pos_indices_list = list(range(num_labels))[4:]  #["[Padding]","[##WordPiece]", "[CLS]", "[SEP]"] + seq_out_set
+                pos_indices_list = pos_indices_list.remove('O')
+                precision_macro = tf_metrics.precision(label_ids, predictions, num_labels, pos_indices_list, average="macro")
+                recall_macro = tf_metrics.recall(label_ids, predictions, num_labels, pos_indices_list, average="macro")
+                f_macro = tf_metrics.f1(label_ids, predictions, num_labels, pos_indices_list, average="macro")
+                precision_micro = tf_metrics.precision(label_ids, predictions, num_labels, pos_indices_list, average="micro")
+                recall_micro = tf_metrics.recall(label_ids, predictions, num_labels, pos_indices_list, average="micro")
+                f_micro = tf_metrics.f1(label_ids, predictions, num_labels, pos_indices_list, average="micro")
                 return {
-                    "eval_precision": precision,
-                    "eval_recall": recall,
-                    "eval_f": f,
-                    # "eval_loss": loss,
+                    "eval_precision(macro)": precision_macro,
+                    "eval_recall(macro)": recall_macro,
+                    "eval_f(macro)": f_macro,
+                    "eval_precision(micro)": precision_micro,
+                    "eval_recall(micro)": recall_micro,
+                    "eval_f(micro)": f_micro,
+                    "eval_loss": per_example_loss,
                 }
 
             eval_metrics = (metric_fn, [per_example_loss, label_ids, logits])
@@ -584,8 +591,9 @@ def main(_):
         "snips": Snips_Slot_Filling_Processor,
         "conll2003ner": CoNLL2003NERProcessor,
     }
-    if not FLAGS.do_train and not FLAGS.do_eval:
-        raise ValueError("At least one of `do_train` or `do_eval` must be True.")
+    if not FLAGS.do_train and not FLAGS.do_eval and not FLAGS.do_predict:
+        raise ValueError(
+            "At least one of `do_train`, `do_eval` or `do_predict' must be True.")
 
     bert_config = modeling.BertConfig.from_json_file(FLAGS.bert_config_file)
 
@@ -601,6 +609,11 @@ def main(_):
     processor = processors[task_name]()
 
     label_list = processor.get_labels()
+
+    id2label = {}
+    for (i, label) in enumerate(label_list):
+        id2label[i] = label
+
     tokenizer = tokenization.FullTokenizer(
         vocab_file=FLAGS.vocab_file, do_lower_case=FLAGS.do_lower_case)
     tpu_cluster_resolver = None
@@ -689,11 +702,6 @@ def main(_):
                 writer.write("%s = %s\n" % (key, str(result[key])))
     if FLAGS.do_predict:
         token_path = os.path.join(FLAGS.output_dir, "token_test.txt")
-        with open(os.path.join(FLAGS.output_dir, "label2id.pkl"), 'rb') as rf:
-            label2id = pickle.load(rf)
-            id2label = {value: key for key, value in label2id.items()}
-        if os.path.exists(token_path):
-            os.remove(token_path)
         predict_examples = processor.get_test_examples(FLAGS.data_dir)
 
         predict_file = os.path.join(FLAGS.output_dir, "predict.tf_record")
@@ -716,10 +724,10 @@ def main(_):
             drop_remainder=predict_drop_remainder)
 
         result = estimator.predict(input_fn=predict_input_fn)
-        output_predict_file = os.path.join(FLAGS.output_dir, "label_test.txt")
+        output_predict_file = os.path.join(FLAGS.output_dir, "slot_filling_test_results.txt")
         with open(output_predict_file, 'w') as writer:
             for prediction in result:
-                output_line = "\n".join(id2label[id] for id in prediction if id != 0) + "\n"
+                output_line = " ".join(id2label[id] for id in prediction if id != 0) + "\n"  #0--->"[Padding]"
                 writer.write(output_line)
 
 
