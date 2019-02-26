@@ -28,7 +28,6 @@ python run_text_classification.py \
 ```
    BERT-for-Sequence-Labeling-and-Text-Classification
   |____ bert store google's [BERT code](https://github.com/google-research/bert)
-  |____ calculating_model_score store model test report
   |____ data store task data set
   |____ output store model output
   |____ pretrained_model store [BERT pretrained model](https://github.com/google-research/bert)
@@ -37,6 +36,16 @@ python run_text_classification.py \
   |____ run_sequence_labeling_and_text_classification.py for join task (come soon!)  
   |____ tf_metrics.py for evaluation model 
 ```
+|name|function|
+|-|-|
+| bert |store google's [BERT code](https://github.com/google-research/bert)|||
+| data |store task data set|
+| output | store model output|
+|pretrained_model |store [BERT pretrained model](https://github.com/google-research/bert)|
+|run_sequence_labeling.py |for Sequence Labeling Task|
+|run_text_classification.py| for Text Classification Task|
+|run_sequence_labeling_and_text_classification.py| for join task (come soon!)  |
+|calculate_model_score.py |for evaluation model |
 
 ## How to add a new task
 
