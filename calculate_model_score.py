@@ -12,6 +12,8 @@ from:
 https://github.com/guillaumegenthial/tf_metrics/blob/master/tf_metrics/__init__.py
 __author__ = "Guillaume Genthial"
 """
+
+
 def precision(labels, predictions, num_classes, pos_indices=None,
               weights=None, average='micro'):
     """Multi-class precision metric for Tensorflow
@@ -160,7 +162,7 @@ def pr_re_fbeta(cm, pos_indices, beta=1):
 
     pr = safe_div(diag_sum, tot_pred)
     re = safe_div(diag_sum, tot_gold)
-    fbeta = safe_div((1. + beta**2) * pr * re, beta**2 * pr + re)
+    fbeta = safe_div((1. + beta ** 2) * pr * re, beta ** 2 * pr + re)
 
     return pr, re, fbeta
 
@@ -215,7 +217,6 @@ def metrics_from_confusion_matrix(cm, pos_indices=None, average='micro',
         raise NotImplementedError()
 
 
-
 class Sequence_Labeling_and_Text_Classification_Calculate(object):
 
     def get_slot_labels(self):
@@ -234,7 +235,7 @@ class Sequence_Labeling_and_Text_Classification_Calculate(object):
 
     @classmethod
     def show_metrics(cls, y_test_list, y_predict_list, label_list):
-        print(time.strftime("%Y-%m-%d %H:%M:%S", time.localtime()) )
+        print(time.strftime("%Y-%m-%d %H:%M:%S", time.localtime()))
         print('准确率:', metrics.accuracy_score(y_test_list, y_predict_list))  # 预测准确率输出
 
         print('宏平均精确率:', metrics.precision_score(y_test_list, y_predict_list, average='macro'))  # 预测宏平均精确率输出
@@ -245,8 +246,10 @@ class Sequence_Labeling_and_Text_Classification_Calculate(object):
         print('微平均召回率:', metrics.recall_score(y_test_list, y_predict_list, average='micro'))  # 预测微平均召回率输出
         print('加权平均召回率:', metrics.recall_score(y_test_list, y_predict_list, average='micro'))  # 预测加权平均召回率输出
 
-        print('宏平均F1-score:', metrics.f1_score(y_test_list, y_predict_list, labels=label_list, average='macro'))  # 预测宏平均f1-score输出
-        print('微平均F1-score:', metrics.f1_score(y_test_list, y_predict_list, labels=label_list, average='micro'))  # 预测微平均f1-score输出
+        print('宏平均F1-score:',
+              metrics.f1_score(y_test_list, y_predict_list, labels=label_list, average='macro'))  # 预测宏平均f1-score输出
+        print('微平均F1-score:',
+              metrics.f1_score(y_test_list, y_predict_list, labels=label_list, average='micro'))  # 预测微平均f1-score输出
         print('加权平均F1-score:',
               metrics.f1_score(y_test_list, y_predict_list, labels=label_list, average='weighted'))  # 预测加权平均f1-score输出
 
@@ -262,25 +265,36 @@ class Sequence_Labeling_and_Text_Classification_Calculate(object):
             log_f.write("时间:\t" + str(time.strftime("%Y-%m-%d %H:%M:%S", time.localtime())) + "\n")
             log_f.write('准确率:\t' + str(metrics.accuracy_score(y_test_list, y_predict_list)) + "\n")  # 预测准确率输出
 
-            log_f.write('宏平均精确率:\t' + str(metrics.precision_score(y_test_list, y_predict_list, average='macro')) + "\n")  # 预测宏平均精确率输出
-            log_f.write('微平均精确率:\t' + str(metrics.precision_score(y_test_list, y_predict_list, average='micro')) + "\n")  # 预测微平均精确率输出
-            log_f.write('加权平均精确率:\t' + str(metrics.precision_score(y_test_list, y_predict_list, average='weighted')) + "\n")  # 预测加权平均精确率输出
+            log_f.write('宏平均精确率:\t' + str(
+                metrics.precision_score(y_test_list, y_predict_list, average='macro')) + "\n")  # 预测宏平均精确率输出
+            log_f.write('微平均精确率:\t' + str(
+                metrics.precision_score(y_test_list, y_predict_list, average='micro')) + "\n")  # 预测微平均精确率输出
+            log_f.write('加权平均精确率:\t' + str(
+                metrics.precision_score(y_test_list, y_predict_list, average='weighted')) + "\n")  # 预测加权平均精确率输出
 
-            log_f.write('宏平均召回率:\t' + str(metrics.recall_score(y_test_list, y_predict_list, average='macro')) + "\n")  # 预测宏平均召回率输出
-            log_f.write('微平均召回率:\t' + str(metrics.recall_score(y_test_list, y_predict_list, average='micro')) + "\n")  # 预测微平均召回率输出
-            log_f.write('加权平均召回率:\t' + str(metrics.recall_score(y_test_list, y_predict_list, average='micro')) + "\n")  # 预测加权平均召回率输出
+            log_f.write('宏平均召回率:\t' + str(
+                metrics.recall_score(y_test_list, y_predict_list, average='macro')) + "\n")  # 预测宏平均召回率输出
+            log_f.write('微平均召回率:\t' + str(
+                metrics.recall_score(y_test_list, y_predict_list, average='micro')) + "\n")  # 预测微平均召回率输出
+            log_f.write('加权平均召回率:\t' + str(
+                metrics.recall_score(y_test_list, y_predict_list, average='micro')) + "\n")  # 预测加权平均召回率输出
 
-            log_f.write('宏平均F1-score:\t' + str(metrics.f1_score(y_test_list, y_predict_list, labels=label_list, average='macro')) + "\n")  # 预测宏平均f1-score输出
-            log_f.write('微平均F1-score:\t' + str(metrics.f1_score(y_test_list, y_predict_list, labels=label_list, average='micro')) + "\n")  # 预测微平均f1-score输出
-            log_f.write('加权平均F1-score:\t' + str(metrics.f1_score(y_test_list, y_predict_list, labels=label_list, average='weighted')) + "\n")  # 预测加权平均f1-score输出
+            log_f.write('宏平均F1-score:\t' + str(metrics.f1_score(y_test_list, y_predict_list, labels=label_list,
+                                                                average='macro')) + "\n")  # 预测宏平均f1-score输出
+            log_f.write('微平均F1-score:\t' + str(metrics.f1_score(y_test_list, y_predict_list, labels=label_list,
+                                                                average='micro')) + "\n")  # 预测微平均f1-score输出
+            log_f.write('加权平均F1-score:\t' + str(metrics.f1_score(y_test_list, y_predict_list, labels=label_list,
+                                                                 average='weighted')) + "\n")  # 预测加权平均f1-score输出
             log_f.write("\n")
             log_f.write('混淆矩阵输出:\n')
+
             def show_numpy_big_array(a_array):
                 for a_row in a_array:
                     a_row_str = [str(a_data) for a_data in a_row]
                     a_line = " ".join(a_row_str)
                     log_f.write(str(a_line) + "\n")
                 log_f.write("\n")
+
             if is_show_numpy_big_array:
                 np.set_printoptions(threshold=np.nan)
                 show_numpy_big_array(metrics.confusion_matrix(y_test_list, y_predict_list))
@@ -347,36 +361,44 @@ class Snips_Slot_Filling_and_Intent_Detection_Calculate(Sequence_Labeling_and_Te
         """
         path_to_slot_sentence_file = os.path.join(self.path_to_label_file, "seq.out")
         slot_sententce_list = self._get_predict_slot_sentence_list(path_to_slot_sentence_file)
-        path_to_slot_filling_test_results_file = os.path.join(self.path_to_predict_label_file, "slot_filling_test_results.txt")
+        path_to_slot_filling_test_results_file = os.path.join(self.path_to_predict_label_file,
+                                                              "slot_filling_test_results.txt")
         predict_slot_sentence_list = self._get_predict_slot_sentence_list(path_to_slot_filling_test_results_file)
         slot_test_list = []
         clean_predict_slot_list = []
         seqence_length_dont_match_index = 0
         for y_test, y_predict in zip(slot_sententce_list, predict_slot_sentence_list):
-            y_predict.remove('[CLS]')
-            y_predict.remove('[SEP]')
+            y_predict = y_predict[1:-1]  # y_predict.remove('[CLS]') #y_predict.remove('[SEP]')
             while '[Padding]' in y_predict:
                 y_predict.remove('[Padding]')
             while '[##WordPiece]' in y_predict:
                 y_predict.remove('[##WordPiece]')
             if len(y_predict) > len(y_test):
-                #print(seqence_length_dont_match_index)
-                #print(y_predict)
-                #print(y_test)
-                #print("~" * 100)
+                print(y_predict)
+                print(y_test)
+                print("~" * 100)
                 seqence_length_dont_match_index += 1
                 y_predict = y_predict[0:len(y_test)]
             elif len(y_predict) < len(y_test):
-                #print(seqence_length_dont_match_index)
-                #print(y_predict)
-                #print(y_test)
-                #print("~" * 100)
+                print(y_predict)
+                print(y_test)
+                print("~" * 100)
                 y_predict = y_predict + ["O"] * (len(y_test) - len(y_predict))
                 seqence_length_dont_match_index += 1
             assert len(y_predict) == len(y_test)
+            # 如果有较多的预测句子与正确句子长度不匹配（> 句子总数的1%），说明不能用上述简单方法处理预测出来的句子
+            assert seqence_length_dont_match_index < int(len(slot_sententce_list) * 0.01)
             slot_test_list.extend(y_test)
             clean_predict_slot_list.extend(y_predict)
-        #print("seqence_length_dont_match numbers", seqence_length_dont_match_index)
+        if "[CLS]" in clean_predict_slot_list:
+            print("[CLS] doesn't just appear at the beginning of a sentence.")
+            clean_predict_slot_list = [y_p.replace("[CLS]", "O") for y_p in clean_predict_slot_list]
+            print("[CLS]" * 10 + "\n")
+        if "[SEP]" in clean_predict_slot_list:
+            print("[SEP] doesn't just appear at the end of a sentence.")
+            clean_predict_slot_list = [y_p.replace("[SEP]", "O") for y_p in clean_predict_slot_list]
+            print("[SEP]"*10+"\n")
+        print("seqence_length_dont_match numbers", seqence_length_dont_match_index)
         return slot_test_list, clean_predict_slot_list
 
     def get_slot_model_labels(self):
@@ -398,63 +420,133 @@ class Snips_Slot_Filling_and_Intent_Detection_Calculate(Sequence_Labeling_and_Te
 
     def get_slot_labels(self):
         """only contain Task labels"""
-        return ['B-album', 'B-artist', 'B-best_rating', 'B-city',
-                'B-condition_description', 'B-condition_temperature', 'B-country', 'B-cuisine', 'B-current_location',
-                'B-entity_name', 'B-facility', 'B-genre', 'B-geographic_poi', 'B-location_name', 'B-movie_name',
-                'B-movie_type', 'B-music_item', 'B-object_location_type', 'B-object_name',
-                'B-object_part_of_series_type', 'B-object_select', 'B-object_type', 'B-party_size_description',
-                'B-party_size_number', 'B-playlist', 'B-playlist_owner', 'B-poi', 'B-rating_unit', 'B-rating_value',
-                'B-restaurant_name', 'B-restaurant_type', 'B-served_dish', 'B-service', 'B-sort', 'B-spatial_relation',
-                'B-state', 'B-timeRange', 'B-track', 'B-year', 'I-album', 'I-artist', 'I-city', 'I-country',
-                'I-cuisine', 'I-current_location', 'I-entity_name', 'I-facility', 'I-genre', 'I-geographic_poi',
-                'I-location_name', 'I-movie_name', 'I-movie_type', 'I-music_item', 'I-object_location_type',
-                'I-object_name', 'I-object_part_of_series_type', 'I-object_select', 'I-object_type',
-                'I-party_size_description', 'I-playlist', 'I-playlist_owner', 'I-poi', 'I-restaurant_name',
-                'I-restaurant_type', 'I-served_dish', 'I-service', 'I-sort', 'I-spatial_relation', 'I-state',
-                'I-timeRange', 'I-track']
+        return ['B-album', 'B-artist', 'B-best_rating', 'B-city', 'B-condition_description', 'B-condition_temperature',
+                'B-country', 'B-cuisine', 'B-current_location', 'B-entity_name', 'B-facility', 'B-genre',
+                'B-geographic_poi', 'B-location_name', 'B-movie_name', 'B-movie_type', 'B-music_item',
+                'B-object_location_type', 'B-object_name', 'B-object_part_of_series_type', 'B-object_select',
+                'B-object_type', 'B-party_size_description', 'B-party_size_number', 'B-playlist', 'B-playlist_owner',
+                'B-poi', 'B-rating_unit', 'B-rating_value', 'B-restaurant_name', 'B-restaurant_type', 'B-served_dish',
+                'B-service', 'B-sort', 'B-spatial_relation', 'B-state', 'B-timeRange', 'B-track', 'B-year', 'I-album',
+                'I-artist', 'I-city', 'I-country', 'I-cuisine', 'I-current_location', 'I-entity_name', 'I-facility',
+                'I-genre', 'I-geographic_poi', 'I-location_name', 'I-movie_name', 'I-movie_type', 'I-music_item',
+                'I-object_location_type', 'I-object_name', 'I-object_part_of_series_type', 'I-object_select',
+                'I-object_type', 'I-party_size_description', 'I-playlist', 'I-playlist_owner', 'I-poi',
+                'I-restaurant_name', 'I-restaurant_type', 'I-served_dish', 'I-service', 'I-sort', 'I-spatial_relation',
+                'I-state', 'I-timeRange', 'I-track', 'O']
 
     def get_intent_labels(self):
         return ['AddToPlaylist', 'BookRestaurant', 'GetWeather', 'PlayMusic',
                 'RateBook', 'SearchCreativeWork', 'SearchScreeningEvent']
 
     def get_conll2003_labels(self):
-        return ['[Padding]', '[##WordPiece]', '[CLS]', '[SEP]', "B-MISC", "I-MISC", "O", "B-PER", "I-PER", "B-ORG",
-                "I-ORG", "B-LOC", "I-LOC"]
+        return ['B-LOC', 'B-MISC', 'B-ORG', 'B-PER', 'I-LOC', 'I-MISC',
+                'I-ORG', 'I-PER', 'O']
 
     def show_intent_prediction_report(self, store_report=True):
         path_to_intent_label_lfile = os.path.join(self.path_to_label_file, "label")
         intent_label_list = self.get_intent_label_list(path_to_intent_label_lfile)
-        path_to_predict_intent_label_file = os.path.join(self.path_to_predict_label_file, "intent_prediction_test_results.txt")
+        path_to_predict_intent_label_file = os.path.join(self.path_to_predict_label_file,
+                                                         "intent_prediction_test_results.txt")
         predict_intent_label_list = self.get_predict_intent_label_list(path_to_predict_intent_label_file)
         labels = self.get_intent_labels()
+        if len(labels) > len(set(intent_label_list)):
+            print("Intent Task Labels number:\t", len(labels))
+            print("Intent true Labels number:\t", len(set(intent_label_list)))
+            print("Intent predict Labels Labels number:\t", len(set(predict_intent_label_list)))
+            assert len(labels)==len(set(intent_label_list))
+            assert len(set(intent_label_list))==len(set(predict_intent_label_list))
         print("---show_intent_prediction_report---")
         self.show_metrics(intent_label_list, predict_intent_label_list, labels)
-        print("--"*30)
+        print("--" * 30)
         if store_report:
             self.store_model_score(intent_label_list, predict_intent_label_list, labels, self.log_out_file)
 
     def show_slot_filling_report(self, store_report=True, label_choose=None):
         slot_test_list, clean_predict_slot_list = self.producte_slot_list()
-        slot_test_list, clean_predict_slot_list = self.delete_both_sides_is_O_word(slot_test_list, clean_predict_slot_list)
+        slot_test_list, clean_predict_slot_list = self.delete_both_sides_is_O_word(slot_test_list,
+                                                                                   clean_predict_slot_list)
         if label_choose is None:
-            labels = self.get_intent_labels()
-        elif label_choose=="conll2003":
+            labels = self.get_slot_labels()
+        elif label_choose == "conll2003":
             labels = self.get_conll2003_labels()
         else:
             raise ValueError("Not found this task labels")
+
+        if len(labels) > len(set(slot_test_list)):
+            print("Slot Filling Task Labels number:\t", len(labels))
+            print("Slot Filling slot_test_list Labels number:\t", len(set(slot_test_list)))
+            print("Slot Filling predict_slot_list Labels number:\t", len(set(clean_predict_slot_list)))
+        # 以下方法保证预测标签和真实标签个数一样，且不会增加计算分数，因为让
+        #  slot_test_list[idx] = "O"  clean_predict_slot_list[idx]="other"
+        #The following method ensures that the number of predicted tags is the same as that of real tags,
+        # and does not increase the calculation score because the number of predicted tags is the same as that of real tags.
+        for idx, test_label in enumerate(slot_test_list):
+            if test_label not in clean_predict_slot_list:
+                slot_test_list[idx] = "O"
+                clean_predict_slot_list[idx] = self.get_slot_labels()[0] #self.get_slot_labels()[0] is not "O"
+
+        labels = list(set(slot_test_list))
         print("---show_slot_filling_report---")
         self.show_metrics(slot_test_list, clean_predict_slot_list, labels)
-        print("--"*30)
+        print("--" * 30)
         if store_report:
             self.store_model_score(slot_test_list, clean_predict_slot_list, labels, self.log_out_file)
 
-if __name__=='__main__':
-    path_to_label_file = "data/snips_Intent_Detection_and_Slot_Filling/test/"
-    
-    path_to_predict_label_file = "output/snips_join_task_epoch10_test4088ckpt"
+
+class Atis_Slot_Filling_and_Intent_Detection_Calculate(Snips_Slot_Filling_and_Intent_Detection_Calculate):
+
+    def get_intent_labels(self):
+        return ['abbreviation', 'aircraft', 'aircraft+flight+flight_no', 'airfare', 'airfare+flight',
+                'airfare+flight_time', 'airline', 'airline+flight_no', 'airport', 'capacity', 'cheapest', 'city',
+                'day_name', 'distance', 'flight', 'flight+airfare', 'flight+airline', 'flight_no', 'flight_no+airline',
+                'flight_time', 'ground_fare', 'ground_service', 'ground_service+ground_fare', 'meal', 'quantity',
+                'restriction']
+
+    def get_slot_labels(self):
+        """only contain Task labels"""
+        return ['B-aircraft_code', 'B-airline_code', 'B-airline_name', 'B-airport_code', 'B-airport_name',
+                'B-arrive_date.date_relative', 'B-arrive_date.day_name', 'B-arrive_date.day_number',
+                'B-arrive_date.month_name', 'B-arrive_date.today_relative', 'B-arrive_time.end_time',
+                'B-arrive_time.period_mod', 'B-arrive_time.period_of_day', 'B-arrive_time.start_time',
+                'B-arrive_time.time', 'B-arrive_time.time_relative', 'B-booking_class', 'B-city_name', 'B-class_type',
+                'B-compartment', 'B-connect', 'B-cost_relative', 'B-day_name', 'B-day_number', 'B-days_code',
+                'B-depart_date.date_relative', 'B-depart_date.day_name', 'B-depart_date.day_number',
+                'B-depart_date.month_name', 'B-depart_date.today_relative', 'B-depart_date.year',
+                'B-depart_time.end_time', 'B-depart_time.period_mod', 'B-depart_time.period_of_day',
+                'B-depart_time.start_time', 'B-depart_time.time', 'B-depart_time.time_relative', 'B-economy',
+                'B-fare_amount', 'B-fare_basis_code', 'B-flight', 'B-flight_days', 'B-flight_mod', 'B-flight_number',
+                'B-flight_stop', 'B-flight_time', 'B-fromloc.airport_code', 'B-fromloc.airport_name',
+                'B-fromloc.city_name', 'B-fromloc.state_code', 'B-fromloc.state_name', 'B-meal', 'B-meal_code',
+                'B-meal_description', 'B-mod', 'B-month_name', 'B-or', 'B-period_of_day', 'B-restriction_code',
+                'B-return_date.date_relative', 'B-return_date.day_name', 'B-return_date.day_number',
+                'B-return_date.month_name', 'B-return_date.today_relative', 'B-return_time.period_mod',
+                'B-return_time.period_of_day', 'B-round_trip', 'B-state_code', 'B-state_name', 'B-stoploc.airport_code',
+                'B-stoploc.airport_name', 'B-stoploc.city_name', 'B-stoploc.state_code', 'B-time', 'B-time_relative',
+                'B-today_relative', 'B-toloc.airport_code', 'B-toloc.airport_name', 'B-toloc.city_name',
+                'B-toloc.country_name', 'B-toloc.state_code', 'B-toloc.state_name', 'B-transport_type',
+                'I-airline_name', 'I-airport_name', 'I-arrive_date.day_number', 'I-arrive_time.end_time',
+                'I-arrive_time.period_of_day', 'I-arrive_time.start_time', 'I-arrive_time.time',
+                'I-arrive_time.time_relative', 'I-city_name', 'I-class_type', 'I-cost_relative',
+                'I-depart_date.day_name', 'I-depart_date.day_number', 'I-depart_date.today_relative',
+                'I-depart_time.end_time', 'I-depart_time.period_of_day', 'I-depart_time.start_time',
+                'I-depart_time.time', 'I-depart_time.time_relative', 'I-economy', 'I-fare_amount', 'I-fare_basis_code',
+                'I-flight_mod', 'I-flight_number', 'I-flight_stop', 'I-flight_time', 'I-fromloc.airport_name',
+                'I-fromloc.city_name', 'I-fromloc.state_name', 'I-meal_code', 'I-meal_description', 'I-mod',
+                'I-restriction_code', 'I-return_date.date_relative', 'I-return_date.day_number',
+                'I-return_date.today_relative', 'I-round_trip', 'I-state_name', 'I-stoploc.city_name', 'I-time',
+                'I-today_relative', 'I-toloc.airport_name', 'I-toloc.city_name', 'I-toloc.state_name',
+                'I-transport_type', 'O']
+
+
+if __name__ == '__main__':
+    path_to_label_file = "data/snips/test/"
+
+    path_to_predict_label_file = "output/snips_join_task_L24_H1024_A16_epoch3_predict1226ckpt"
     log_out_file = path_to_predict_label_file
     intent_slot_reports = Snips_Slot_Filling_and_Intent_Detection_Calculate(
         path_to_label_file, path_to_predict_label_file, log_out_file)
 
-    #intent_slot_reports.show_intent_prediction_report(store_report=True)
-    intent_slot_reports.show_slot_filling_report(store_report=True, label_choose=None)
+    intent_slot_reports.show_intent_prediction_report(store_report=True)
+    intent_slot_reports.show_slot_filling_report(store_report=True)
+    # print(intent_slot_reports.get_intent_labels())
+    # print(intent_slot_reports.get_slot_labels())
