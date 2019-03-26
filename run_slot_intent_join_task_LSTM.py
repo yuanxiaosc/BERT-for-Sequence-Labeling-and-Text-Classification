@@ -577,6 +577,15 @@ def create_model(bert_config, is_training, input_ids, input_mask, segment_ids,
     #     """
     slot_output_layer = model.get_sequence_output()
 
+    ###################################################################################
+    with tf.variable_scope("slot_output_layers"):
+        cell_fw = tf.nn.rnn_cell.LSTMCell(num_units=384)
+        cell_bw = tf.nn.rnn_cell.LSTMCell(num_units=384)
+        outputs, states = tf.nn.bidirectional_dynamic_rnn(
+            cell_fw=cell_fw, cell_bw=cell_bw, inputs=slot_output_layer, dtype=tf.float32)
+        slot_output_layer = tf.concat([outputs[0], outputs[1]], axis=2)
+    ###################################################################################
+
     slot_hidden_size = slot_output_layer.shape[-1].value
 
     slot_output_weight = tf.get_variable(

@@ -537,7 +537,7 @@ def model_fn_builder(bert_config, num_labels, init_checkpoint, learning_rate,
                 # def metric_fn(label_ids, logits):
                 predictions = tf.argmax(logits, axis=-1, output_type=tf.int32)
                 pos_indices_list = list(range(num_labels))[4:]  #["[Padding]","[##WordPiece]", "[CLS]", "[SEP]"] + seq_out_set
-                pos_indices_list = pos_indices_list.remove('O')
+                pos_indices_list = pos_indices_list[:-1]    # do not care "O"
                 precision_macro = tf_metrics.precision(label_ids, predictions, num_labels, pos_indices_list, average="macro")
                 recall_macro = tf_metrics.recall(label_ids, predictions, num_labels, pos_indices_list, average="macro")
                 f_macro = tf_metrics.f1(label_ids, predictions, num_labels, pos_indices_list, average="macro")
