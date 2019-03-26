@@ -1,6 +1,7 @@
 # Template Code: BERT-for-Sequence-Labeling-and-Text-Classification
 + BERT is used for sequence annotation and text categorization template code to facilitate BERT for more tasks. Welcome to use this BERT template to solve more NLP tasks, and then share your results and code here.
 + 这是使用BERT进行序列注释和文本分类的模板代码，方便大家将BERT用于更多任务。欢迎使用这个BERT模板解决更多NLP任务，然后在这里分享你的结果和代码。
++ 项目例子具体使用方法见  [BERT-for-Sequence-Labeling-and-Text-Classification的使用方法.ipynb](https://github.com/yuanxiaosc/BERT-for-Sequence-Labeling-and-Text-Classification/blob/master/BERT-for-Sequence-Labeling-and-Text-Classification%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95.ipynb)
 
 ## Template Code Usage Method
 1. Move google's [BERT code](https://github.com/google-research/bert) to  file ```bert``` (I've prepared a copy for you.);
