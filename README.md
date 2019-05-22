@@ -1,27 +1,38 @@
 # Template Code: BERT-for-Sequence-Labeling-and-Text-Classification
 + BERT is used for sequence annotation and text categorization template code to facilitate BERT for more tasks. Welcome to use this BERT template to solve more NLP tasks, and then share your results and code here.
 + 这是使用BERT进行序列注释和文本分类的模板代码，方便大家将BERT用于更多任务。欢迎使用这个BERT模板解决更多NLP任务，然后在这里分享你的结果和代码。
-+ 项目例子具体使用方法见  [BERT-for-Sequence-Labeling-and-Text-Classification的使用方法.ipynb](https://github.com/yuanxiaosc/BERT-for-Sequence-Labeling-and-Text-Classification/blob/master/BERT-for-Sequence-Labeling-and-Text-Classification%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95.ipynb)
++ 项目例子具体使用方法见  [Usage example 使用方法示例.ipynb](https://github.com/yuanxiaosc/BERT-for-Sequence-Labeling-and-Text-Classification/blob/master/Usage%20example%20%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95%E7%A4%BA%E4%BE%8B.ipynb)
 
 ## Template Code Usage Method
 1. Move google's [BERT code](https://github.com/google-research/bert) to  file ```bert``` (I've prepared a copy for you.);
 2. Download google's [BERT pretrained model](https://github.com/google-research/bert) and unzip then to  file ```pretrained_model```;
 3. Run Code!  You can change task_name and output_dir.
 
+**model training**
 ```
-python run_text_classification.py \
---task_name=Snips \
---do_train=true \
---do_eval=true \
---data_dir=data/snips_Intent_Detection_and_Slot_Filling \
---vocab_file=pretrained_model/uncased_L-12_H-768_A-12/vocab.txt \
---bert_config_file=pretrained_model/uncased_L-12_H-768_A-12/bert_config.json \
---init_checkpoint=pretrained_model/uncased_L-12_H-768_A-12/bert_model.ckpt \
---max_seq_length=128 \
---train_batch_size=32 \
---learning_rate=2e-5 \
---num_train_epochs=3.0 \
---output_dir=./output/snips_Intent_Detection/
+python run_sequence_labeling_and_text_classification.py \
+  --task_name=snips \
+  --do_train=true \
+  --do_eval=true \
+  --data_dir=data/snips_Intent_Detection_and_Slot_Filling \
+  --vocab_file=pretrained_model/uncased_L-12_H-768_A-12/vocab.txt \
+  --bert_config_file=pretrained_model/uncased_L-12_H-768_A-12/bert_config.json \
+  --init_checkpoint=pretrained_model/uncased_L-12_H-768_A-12/bert_model.ckpt \
+  --num_train_epochs=3.0 \
+  --output_dir=./output_model/snips_join_task_epoch3/
+```
+
+**model prediction**
+```
+python run_sequence_labeling_and_text_classification.py \
+  --task_name=Snips \
+  --do_predict=true \
+  --data_dir=data/snips_Intent_Detection_and_Slot_Filling \
+  --vocab_file=pretrained_model/uncased_L-12_H-768_A-12/vocab.txt \
+  --bert_config_file=pretrained_model/uncased_L-12_H-768_A-12/bert_config.json \
+  --init_checkpoint=output_model/snips_join_task_epoch3/model.ckpt-1000 \
+  --max_seq_length=128 \
+  --output_dir=./output_predict/snips_join_task_epoch3_ckpt1000
 ```
 
 ## File Structure
@@ -30,7 +41,9 @@ python run_text_classification.py \
 |-|-|
 | bert |store google's [BERT code](https://github.com/google-research/bert)|||
 | data |store task data set|
-| output | store model output|
+|output_predict|store model predict|
+| output_model| store trained model|
+|calculating_model_score||
 |pretrained_model |store [BERT pretrained model](https://github.com/google-research/bert)|
 |run_sequence_labeling.py |for Sequence Labeling Task|
 |run_text_classification.py| for Text Classification Task|
