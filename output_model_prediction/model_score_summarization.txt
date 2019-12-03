@@ -1,0 +1,1306 @@
+****************************************************************************************************
+****************************snips_join_task_epoch10_test4088ckpt****************************
+****************************************************************************************************
+时间:	2019-02-26 20:17:25
+准确率:	0.9564296520423601
+宏平均精确率:	0.93149482976552
+微平均精确率:	0.9564296520423601
+加权平均精确率:	0.9560604859270754
+宏平均召回率:	0.9291882727027148
+微平均召回率:	0.9564296520423601
+加权平均召回率:	0.9564296520423601
+宏平均F1-score:	0.0
+微平均F1-score:	0.0
+加权平均F1-score:	0
+
+混淆矩阵输出:
+[[  7   0   0 ...   0   0   1]
+ [  0 104   0 ...   0   0   0]
+ [  0   0  43 ...   0   0   0]
+ ...
+ [  0   0   0 ... 143   0   0]
+ [  0   0   0 ...   0  17   0]
+ [  2   1   0 ...   1   2   0]]
+分类报告:
+                              precision    recall  f1-score   support
+
+                     B-album       0.58      0.70      0.64        10
+                    B-artist       0.96      0.97      0.97       107
+               B-best_rating       1.00      1.00      1.00        43
+                      B-city       1.00      0.98      0.99        60
+     B-condition_description       1.00      1.00      1.00        28
+     B-condition_temperature       0.96      1.00      0.98        23
+                   B-country       1.00      0.95      0.98        44
+                   B-cuisine       0.93      0.93      0.93        14
+          B-current_location       1.00      1.00      1.00        14
+               B-entity_name       0.87      0.82      0.84        33
+                  B-facility       1.00      1.00      1.00         3
+                     B-genre       1.00      1.00      1.00         5
+            B-geographic_poi       1.00      1.00      1.00        11
+             B-location_name       1.00      1.00      1.00        24
+                B-movie_name       1.00      0.85      0.92        47
+                B-movie_type       1.00      1.00      1.00        33
+                B-music_item       0.98      0.99      0.99       104
+      B-object_location_type       1.00      1.00      1.00        22
+               B-object_name       0.88      0.93      0.90       147
+B-object_part_of_series_type       1.00      1.00      1.00        11
+             B-object_select       1.00      1.00      1.00        40
+               B-object_type       0.99      0.99      0.99       162
+    B-party_size_description       1.00      1.00      1.00        10
+         B-party_size_number       1.00      1.00      1.00        50
+                  B-playlist       0.96      0.98      0.97       129
+            B-playlist_owner       1.00      1.00      1.00        70
+                       B-poi       0.88      0.88      0.88         8
+               B-rating_unit       1.00      1.00      1.00        40
+              B-rating_value       1.00      1.00      1.00        80
+           B-restaurant_name       0.94      1.00      0.97        15
+           B-restaurant_type       1.00      0.98      0.99        65
+               B-served_dish       0.92      0.92      0.92        12
+                   B-service       1.00      1.00      1.00        24
+                      B-sort       0.97      0.97      0.97        32
+          B-spatial_relation       0.96      1.00      0.98        71
+                     B-state       0.97      0.98      0.97        59
+                 B-timeRange       0.98      0.98      0.98       107
+                     B-track       0.70      0.78      0.74         9
+                      B-year       1.00      1.00      1.00        24
+                     I-album       0.59      0.62      0.60        21
+                    I-artist       0.99      0.99      0.99       112
+                      I-city       1.00      1.00      1.00        19
+                   I-country       1.00      0.96      0.98        25
+                   I-cuisine       1.00      1.00      1.00         1
+          I-current_location       1.00      1.00      1.00         7
+               I-entity_name       1.00      0.93      0.96        54
+                     I-genre       1.00      1.00      1.00         2
+            I-geographic_poi       1.00      1.00      1.00        33
+             I-location_name       1.00      1.00      1.00        30
+                I-movie_name       0.98      0.83      0.90       121
+                I-movie_type       1.00      1.00      1.00        16
+                I-music_item       1.00      1.00      1.00         5
+      I-object_location_type       1.00      1.00      1.00        16
+               I-object_name       0.93      0.97      0.95       399
+I-object_part_of_series_type       0.00      0.00      0.00         1
+               I-object_type       0.99      1.00      0.99        66
+    I-party_size_description       1.00      1.00      1.00        35
+                  I-playlist       0.97      0.95      0.96       231
+            I-playlist_owner       1.00      1.00      1.00         7
+                       I-poi       1.00      0.91      0.95        11
+           I-restaurant_name       0.95      1.00      0.97        36
+           I-restaurant_type       1.00      1.00      1.00         7
+               I-served_dish       1.00      0.50      0.67         4
+                   I-service       1.00      1.00      1.00         5
+                      I-sort       1.00      1.00      1.00         9
+          I-spatial_relation       0.95      1.00      0.98        42
+                     I-state       0.86      1.00      0.92         6
+                 I-timeRange       0.99      0.99      0.99       144
+                     I-track       0.59      0.81      0.68        21
+                           O       0.00      0.00      0.00        29
+
+                 avg / total       0.96      0.96      0.96      3305
+
+
+
+时间:	2019-02-26 20:20:58
+准确率:	0.9564296520423601
+宏平均精确率:	0.93149482976552
+微平均精确率:	0.9564296520423601
+加权平均精确率:	0.9560604859270754
+宏平均召回率:	0.9291882727027148
+微平均召回率:	0.9564296520423601
+加权平均召回率:	0.9564296520423601
+宏平均F1-score:	0.0
+微平均F1-score:	0.0
+加权平均F1-score:	0
+
+混淆矩阵输出:
+[[  7   0   0 ...   0   0   1]
+ [  0 104   0 ...   0   0   0]
+ [  0   0  43 ...   0   0   0]
+ ...
+ [  0   0   0 ... 143   0   0]
+ [  0   0   0 ...   0  17   0]
+ [  2   1   0 ...   1   2   0]]
+分类报告:
+                              precision    recall  f1-score   support
+
+                     B-album       0.58      0.70      0.64        10
+                    B-artist       0.96      0.97      0.97       107
+               B-best_rating       1.00      1.00      1.00        43
+                      B-city       1.00      0.98      0.99        60
+     B-condition_description       1.00      1.00      1.00        28
+     B-condition_temperature       0.96      1.00      0.98        23
+                   B-country       1.00      0.95      0.98        44
+                   B-cuisine       0.93      0.93      0.93        14
+          B-current_location       1.00      1.00      1.00        14
+               B-entity_name       0.87      0.82      0.84        33
+                  B-facility       1.00      1.00      1.00         3
+                     B-genre       1.00      1.00      1.00         5
+            B-geographic_poi       1.00      1.00      1.00        11
+             B-location_name       1.00      1.00      1.00        24
+                B-movie_name       1.00      0.85      0.92        47
+                B-movie_type       1.00      1.00      1.00        33
+                B-music_item       0.98      0.99      0.99       104
+      B-object_location_type       1.00      1.00      1.00        22
+               B-object_name       0.88      0.93      0.90       147
+B-object_part_of_series_type       1.00      1.00      1.00        11
+             B-object_select       1.00      1.00      1.00        40
+               B-object_type       0.99      0.99      0.99       162
+    B-party_size_description       1.00      1.00      1.00        10
+         B-party_size_number       1.00      1.00      1.00        50
+                  B-playlist       0.96      0.98      0.97       129
+            B-playlist_owner       1.00      1.00      1.00        70
+                       B-poi       0.88      0.88      0.88         8
+               B-rating_unit       1.00      1.00      1.00        40
+              B-rating_value       1.00      1.00      1.00        80
+           B-restaurant_name       0.94      1.00      0.97        15
+           B-restaurant_type       1.00      0.98      0.99        65
+               B-served_dish       0.92      0.92      0.92        12
+                   B-service       1.00      1.00      1.00        24
+                      B-sort       0.97      0.97      0.97        32
+          B-spatial_relation       0.96      1.00      0.98        71
+                     B-state       0.97      0.98      0.97        59
+                 B-timeRange       0.98      0.98      0.98       107
+                     B-track       0.70      0.78      0.74         9
+                      B-year       1.00      1.00      1.00        24
+                     I-album       0.59      0.62      0.60        21
+                    I-artist       0.99      0.99      0.99       112
+                      I-city       1.00      1.00      1.00        19
+                   I-country       1.00      0.96      0.98        25
+                   I-cuisine       1.00      1.00      1.00         1
+          I-current_location       1.00      1.00      1.00         7
+               I-entity_name       1.00      0.93      0.96        54
+                     I-genre       1.00      1.00      1.00         2
+            I-geographic_poi       1.00      1.00      1.00        33
+             I-location_name       1.00      1.00      1.00        30
+                I-movie_name       0.98      0.83      0.90       121
+                I-movie_type       1.00      1.00      1.00        16
+                I-music_item       1.00      1.00      1.00         5
+      I-object_location_type       1.00      1.00      1.00        16
+               I-object_name       0.93      0.97      0.95       399
+I-object_part_of_series_type       0.00      0.00      0.00         1
+               I-object_type       0.99      1.00      0.99        66
+    I-party_size_description       1.00      1.00      1.00        35
+                  I-playlist       0.97      0.95      0.96       231
+            I-playlist_owner       1.00      1.00      1.00         7
+                       I-poi       1.00      0.91      0.95        11
+           I-restaurant_name       0.95      1.00      0.97        36
+           I-restaurant_type       1.00      1.00      1.00         7
+               I-served_dish       1.00      0.50      0.67         4
+                   I-service       1.00      1.00      1.00         5
+                      I-sort       1.00      1.00      1.00         9
+          I-spatial_relation       0.95      1.00      0.98        42
+                     I-state       0.86      1.00      0.92         6
+                 I-timeRange       0.99      0.99      0.99       144
+                     I-track       0.59      0.81      0.68        21
+                           O       0.00      0.00      0.00        29
+
+                 avg / total       0.96      0.96      0.96      3305
+
+
+
+时间:	2019-02-26 20:21:24
+准确率:	0.9857142857142858
+宏平均精确率:	0.986602147725126
+微平均精确率:	0.9857142857142858
+加权平均精确率:	0.9863539532382986
+宏平均召回率:	0.9863228490700778
+微平均召回率:	0.9857142857142858
+加权平均召回率:	0.9857142857142858
+宏平均F1-score:	0.9861982841374647
+微平均F1-score:	0.9857142857142858
+加权平均F1-score:	0.9857523952409603
+
+混淆矩阵输出:
+[[124   0   0   0   0   0   0]
+ [  0  92   0   0   0   0   0]
+ [  0   0 104   0   0   0   0]
+ [  0   0   0  85   0   1   0]
+ [  0   0   0   0  80   0   0]
+ [  0   0   0   2   0 105   0]
+ [  0   0   0   0   0   7 100]]
+分类报告:
+                      precision    recall  f1-score   support
+
+       AddToPlaylist       1.00      1.00      1.00       124
+      BookRestaurant       1.00      1.00      1.00        92
+          GetWeather       1.00      1.00      1.00       104
+           PlayMusic       0.98      0.99      0.98        86
+            RateBook       1.00      1.00      1.00        80
+  SearchCreativeWork       0.93      0.98      0.95       107
+SearchScreeningEvent       1.00      0.93      0.97       107
+
+         avg / total       0.99      0.99      0.99       700
+
+
+
+时间:	2019-02-26 20:21:24
+准确率:	0.9564296520423601
+宏平均精确率:	0.93149482976552
+微平均精确率:	0.9564296520423601
+加权平均精确率:	0.9560604859270754
+宏平均召回率:	0.9291882727027148
+微平均召回率:	0.9564296520423601
+加权平均召回率:	0.9564296520423601
+宏平均F1-score:	0.0
+微平均F1-score:	0.0
+加权平均F1-score:	0
+
+混淆矩阵输出:
+[[  7   0   0 ...   0   0   1]
+ [  0 104   0 ...   0   0   0]
+ [  0   0  43 ...   0   0   0]
+ ...
+ [  0   0   0 ... 143   0   0]
+ [  0   0   0 ...   0  17   0]
+ [  2   1   0 ...   1   2   0]]
+分类报告:
+                              precision    recall  f1-score   support
+
+                     B-album       0.58      0.70      0.64        10
+                    B-artist       0.96      0.97      0.97       107
+               B-best_rating       1.00      1.00      1.00        43
+                      B-city       1.00      0.98      0.99        60
+     B-condition_description       1.00      1.00      1.00        28
+     B-condition_temperature       0.96      1.00      0.98        23
+                   B-country       1.00      0.95      0.98        44
+                   B-cuisine       0.93      0.93      0.93        14
+          B-current_location       1.00      1.00      1.00        14
+               B-entity_name       0.87      0.82      0.84        33
+                  B-facility       1.00      1.00      1.00         3
+                     B-genre       1.00      1.00      1.00         5
+            B-geographic_poi       1.00      1.00      1.00        11
+             B-location_name       1.00      1.00      1.00        24
+                B-movie_name       1.00      0.85      0.92        47
+                B-movie_type       1.00      1.00      1.00        33
+                B-music_item       0.98      0.99      0.99       104
+      B-object_location_type       1.00      1.00      1.00        22
+               B-object_name       0.88      0.93      0.90       147
+B-object_part_of_series_type       1.00      1.00      1.00        11
+             B-object_select       1.00      1.00      1.00        40
+               B-object_type       0.99      0.99      0.99       162
+    B-party_size_description       1.00      1.00      1.00        10
+         B-party_size_number       1.00      1.00      1.00        50
+                  B-playlist       0.96      0.98      0.97       129
+            B-playlist_owner       1.00      1.00      1.00        70
+                       B-poi       0.88      0.88      0.88         8
+               B-rating_unit       1.00      1.00      1.00        40
+              B-rating_value       1.00      1.00      1.00        80
+           B-restaurant_name       0.94      1.00      0.97        15
+           B-restaurant_type       1.00      0.98      0.99        65
+               B-served_dish       0.92      0.92      0.92        12
+                   B-service       1.00      1.00      1.00        24
+                      B-sort       0.97      0.97      0.97        32
+          B-spatial_relation       0.96      1.00      0.98        71
+                     B-state       0.97      0.98      0.97        59
+                 B-timeRange       0.98      0.98      0.98       107
+                     B-track       0.70      0.78      0.74         9
+                      B-year       1.00      1.00      1.00        24
+                     I-album       0.59      0.62      0.60        21
+                    I-artist       0.99      0.99      0.99       112
+                      I-city       1.00      1.00      1.00        19
+                   I-country       1.00      0.96      0.98        25
+                   I-cuisine       1.00      1.00      1.00         1
+          I-current_location       1.00      1.00      1.00         7
+               I-entity_name       1.00      0.93      0.96        54
+                     I-genre       1.00      1.00      1.00         2
+            I-geographic_poi       1.00      1.00      1.00        33
+             I-location_name       1.00      1.00      1.00        30
+                I-movie_name       0.98      0.83      0.90       121
+                I-movie_type       1.00      1.00      1.00        16
+                I-music_item       1.00      1.00      1.00         5
+      I-object_location_type       1.00      1.00      1.00        16
+               I-object_name       0.93      0.97      0.95       399
+I-object_part_of_series_type       0.00      0.00      0.00         1
+               I-object_type       0.99      1.00      0.99        66
+    I-party_size_description       1.00      1.00      1.00        35
+                  I-playlist       0.97      0.95      0.96       231
+            I-playlist_owner       1.00      1.00      1.00         7
+                       I-poi       1.00      0.91      0.95        11
+           I-restaurant_name       0.95      1.00      0.97        36
+           I-restaurant_type       1.00      1.00      1.00         7
+               I-served_dish       1.00      0.50      0.67         4
+                   I-service       1.00      1.00      1.00         5
+                      I-sort       1.00      1.00      1.00         9
+          I-spatial_relation       0.95      1.00      0.98        42
+                     I-state       0.86      1.00      0.92         6
+                 I-timeRange       0.99      0.99      0.99       144
+                     I-track       0.59      0.81      0.68        21
+                           O       0.00      0.00      0.00        29
+
+                 avg / total       0.96      0.96      0.96      3305
+
+
+
+时间:	2019-02-26 20:21:51
+准确率:	0.9564296520423601
+宏平均精确率:	0.93149482976552
+微平均精确率:	0.9564296520423601
+加权平均精确率:	0.9560604859270754
+宏平均召回率:	0.9291882727027148
+微平均召回率:	0.9564296520423601
+加权平均召回率:	0.9564296520423601
+宏平均F1-score:	0.0
+微平均F1-score:	0.0
+加权平均F1-score:	0
+
+混淆矩阵输出:
+[[  7   0   0 ...   0   0   1]
+ [  0 104   0 ...   0   0   0]
+ [  0   0  43 ...   0   0   0]
+ ...
+ [  0   0   0 ... 143   0   0]
+ [  0   0   0 ...   0  17   0]
+ [  2   1   0 ...   1   2   0]]
+分类报告:
+                              precision    recall  f1-score   support
+
+                     B-album       0.58      0.70      0.64        10
+                    B-artist       0.96      0.97      0.97       107
+               B-best_rating       1.00      1.00      1.00        43
+                      B-city       1.00      0.98      0.99        60
+     B-condition_description       1.00      1.00      1.00        28
+     B-condition_temperature       0.96      1.00      0.98        23
+                   B-country       1.00      0.95      0.98        44
+                   B-cuisine       0.93      0.93      0.93        14
+          B-current_location       1.00      1.00      1.00        14
+               B-entity_name       0.87      0.82      0.84        33
+                  B-facility       1.00      1.00      1.00         3
+                     B-genre       1.00      1.00      1.00         5
+            B-geographic_poi       1.00      1.00      1.00        11
+             B-location_name       1.00      1.00      1.00        24
+                B-movie_name       1.00      0.85      0.92        47
+                B-movie_type       1.00      1.00      1.00        33
+                B-music_item       0.98      0.99      0.99       104
+      B-object_location_type       1.00      1.00      1.00        22
+               B-object_name       0.88      0.93      0.90       147
+B-object_part_of_series_type       1.00      1.00      1.00        11
+             B-object_select       1.00      1.00      1.00        40
+               B-object_type       0.99      0.99      0.99       162
+    B-party_size_description       1.00      1.00      1.00        10
+         B-party_size_number       1.00      1.00      1.00        50
+                  B-playlist       0.96      0.98      0.97       129
+            B-playlist_owner       1.00      1.00      1.00        70
+                       B-poi       0.88      0.88      0.88         8
+               B-rating_unit       1.00      1.00      1.00        40
+              B-rating_value       1.00      1.00      1.00        80
+           B-restaurant_name       0.94      1.00      0.97        15
+           B-restaurant_type       1.00      0.98      0.99        65
+               B-served_dish       0.92      0.92      0.92        12
+                   B-service       1.00      1.00      1.00        24
+                      B-sort       0.97      0.97      0.97        32
+          B-spatial_relation       0.96      1.00      0.98        71
+                     B-state       0.97      0.98      0.97        59
+                 B-timeRange       0.98      0.98      0.98       107
+                     B-track       0.70      0.78      0.74         9
+                      B-year       1.00      1.00      1.00        24
+                     I-album       0.59      0.62      0.60        21
+                    I-artist       0.99      0.99      0.99       112
+                      I-city       1.00      1.00      1.00        19
+                   I-country       1.00      0.96      0.98        25
+                   I-cuisine       1.00      1.00      1.00         1
+          I-current_location       1.00      1.00      1.00         7
+               I-entity_name       1.00      0.93      0.96        54
+                     I-genre       1.00      1.00      1.00         2
+            I-geographic_poi       1.00      1.00      1.00        33
+             I-location_name       1.00      1.00      1.00        30
+                I-movie_name       0.98      0.83      0.90       121
+                I-movie_type       1.00      1.00      1.00        16
+                I-music_item       1.00      1.00      1.00         5
+      I-object_location_type       1.00      1.00      1.00        16
+               I-object_name       0.93      0.97      0.95       399
+I-object_part_of_series_type       0.00      0.00      0.00         1
+               I-object_type       0.99      1.00      0.99        66
+    I-party_size_description       1.00      1.00      1.00        35
+                  I-playlist       0.97      0.95      0.96       231
+            I-playlist_owner       1.00      1.00      1.00         7
+                       I-poi       1.00      0.91      0.95        11
+           I-restaurant_name       0.95      1.00      0.97        36
+           I-restaurant_type       1.00      1.00      1.00         7
+               I-served_dish       1.00      0.50      0.67         4
+                   I-service       1.00      1.00      1.00         5
+                      I-sort       1.00      1.00      1.00         9
+          I-spatial_relation       0.95      1.00      0.98        42
+                     I-state       0.86      1.00      0.92         6
+                 I-timeRange       0.99      0.99      0.99       144
+                     I-track       0.59      0.81      0.68        21
+                           O       0.00      0.00      0.00        29
+
+                 avg / total       0.96      0.96      0.96      3305
+
+
+
+时间:	2019-02-26 20:22:16
+准确率:	0.9857142857142858
+宏平均精确率:	0.986602147725126
+微平均精确率:	0.9857142857142858
+加权平均精确率:	0.9863539532382986
+宏平均召回率:	0.9863228490700778
+微平均召回率:	0.9857142857142858
+加权平均召回率:	0.9857142857142858
+宏平均F1-score:	0.9861982841374647
+微平均F1-score:	0.9857142857142858
+加权平均F1-score:	0.9857523952409603
+
+混淆矩阵输出:
+[[124   0   0   0   0   0   0]
+ [  0  92   0   0   0   0   0]
+ [  0   0 104   0   0   0   0]
+ [  0   0   0  85   0   1   0]
+ [  0   0   0   0  80   0   0]
+ [  0   0   0   2   0 105   0]
+ [  0   0   0   0   0   7 100]]
+分类报告:
+                      precision    recall  f1-score   support
+
+       AddToPlaylist       1.00      1.00      1.00       124
+      BookRestaurant       1.00      1.00      1.00        92
+          GetWeather       1.00      1.00      1.00       104
+           PlayMusic       0.98      0.99      0.98        86
+            RateBook       1.00      1.00      1.00        80
+  SearchCreativeWork       0.93      0.98      0.95       107
+SearchScreeningEvent       1.00      0.93      0.97       107
+
+         avg / total       0.99      0.99      0.99       700
+
+
+
+时间:	2019-02-26 20:22:31
+准确率:	0.9564296520423601
+宏平均精确率:	0.93149482976552
+微平均精确率:	0.9564296520423601
+加权平均精确率:	0.9560604859270754
+宏平均召回率:	0.9291882727027148
+微平均召回率:	0.9564296520423601
+加权平均召回率:	0.9564296520423601
+宏平均F1-score:	0.0
+微平均F1-score:	0.0
+加权平均F1-score:	0
+
+混淆矩阵输出:
+[[  7   0   0 ...   0   0   1]
+ [  0 104   0 ...   0   0   0]
+ [  0   0  43 ...   0   0   0]
+ ...
+ [  0   0   0 ... 143   0   0]
+ [  0   0   0 ...   0  17   0]
+ [  2   1   0 ...   1   2   0]]
+分类报告:
+                              precision    recall  f1-score   support
+
+                     B-album       0.58      0.70      0.64        10
+                    B-artist       0.96      0.97      0.97       107
+               B-best_rating       1.00      1.00      1.00        43
+                      B-city       1.00      0.98      0.99        60
+     B-condition_description       1.00      1.00      1.00        28
+     B-condition_temperature       0.96      1.00      0.98        23
+                   B-country       1.00      0.95      0.98        44
+                   B-cuisine       0.93      0.93      0.93        14
+          B-current_location       1.00      1.00      1.00        14
+               B-entity_name       0.87      0.82      0.84        33
+                  B-facility       1.00      1.00      1.00         3
+                     B-genre       1.00      1.00      1.00         5
+            B-geographic_poi       1.00      1.00      1.00        11
+             B-location_name       1.00      1.00      1.00        24
+                B-movie_name       1.00      0.85      0.92        47
+                B-movie_type       1.00      1.00      1.00        33
+                B-music_item       0.98      0.99      0.99       104
+      B-object_location_type       1.00      1.00      1.00        22
+               B-object_name       0.88      0.93      0.90       147
+B-object_part_of_series_type       1.00      1.00      1.00        11
+             B-object_select       1.00      1.00      1.00        40
+               B-object_type       0.99      0.99      0.99       162
+    B-party_size_description       1.00      1.00      1.00        10
+         B-party_size_number       1.00      1.00      1.00        50
+                  B-playlist       0.96      0.98      0.97       129
+            B-playlist_owner       1.00      1.00      1.00        70
+                       B-poi       0.88      0.88      0.88         8
+               B-rating_unit       1.00      1.00      1.00        40
+              B-rating_value       1.00      1.00      1.00        80
+           B-restaurant_name       0.94      1.00      0.97        15
+           B-restaurant_type       1.00      0.98      0.99        65
+               B-served_dish       0.92      0.92      0.92        12
+                   B-service       1.00      1.00      1.00        24
+                      B-sort       0.97      0.97      0.97        32
+          B-spatial_relation       0.96      1.00      0.98        71
+                     B-state       0.97      0.98      0.97        59
+                 B-timeRange       0.98      0.98      0.98       107
+                     B-track       0.70      0.78      0.74         9
+                      B-year       1.00      1.00      1.00        24
+                     I-album       0.59      0.62      0.60        21
+                    I-artist       0.99      0.99      0.99       112
+                      I-city       1.00      1.00      1.00        19
+                   I-country       1.00      0.96      0.98        25
+                   I-cuisine       1.00      1.00      1.00         1
+          I-current_location       1.00      1.00      1.00         7
+               I-entity_name       1.00      0.93      0.96        54
+                     I-genre       1.00      1.00      1.00         2
+            I-geographic_poi       1.00      1.00      1.00        33
+             I-location_name       1.00      1.00      1.00        30
+                I-movie_name       0.98      0.83      0.90       121
+                I-movie_type       1.00      1.00      1.00        16
+                I-music_item       1.00      1.00      1.00         5
+      I-object_location_type       1.00      1.00      1.00        16
+               I-object_name       0.93      0.97      0.95       399
+I-object_part_of_series_type       0.00      0.00      0.00         1
+               I-object_type       0.99      1.00      0.99        66
+    I-party_size_description       1.00      1.00      1.00        35
+                  I-playlist       0.97      0.95      0.96       231
+            I-playlist_owner       1.00      1.00      1.00         7
+                       I-poi       1.00      0.91      0.95        11
+           I-restaurant_name       0.95      1.00      0.97        36
+           I-restaurant_type       1.00      1.00      1.00         7
+               I-served_dish       1.00      0.50      0.67         4
+                   I-service       1.00      1.00      1.00         5
+                      I-sort       1.00      1.00      1.00         9
+          I-spatial_relation       0.95      1.00      0.98        42
+                     I-state       0.86      1.00      0.92         6
+                 I-timeRange       0.99      0.99      0.99       144
+                     I-track       0.59      0.81      0.68        21
+                           O       0.00      0.00      0.00        29
+
+                 avg / total       0.96      0.96      0.96      3305
+
+
+
+时间:	2019-02-26 20:25:15
+准确率:	0.9857142857142858
+宏平均精确率:	0.986602147725126
+微平均精确率:	0.9857142857142858
+加权平均精确率:	0.9863539532382986
+宏平均召回率:	0.9863228490700778
+微平均召回率:	0.9857142857142858
+加权平均召回率:	0.9857142857142858
+宏平均F1-score:	0.9861982841374647
+微平均F1-score:	0.9857142857142858
+加权平均F1-score:	0.9857523952409603
+
+混淆矩阵输出:
+[[124   0   0   0   0   0   0]
+ [  0  92   0   0   0   0   0]
+ [  0   0 104   0   0   0   0]
+ [  0   0   0  85   0   1   0]
+ [  0   0   0   0  80   0   0]
+ [  0   0   0   2   0 105   0]
+ [  0   0   0   0   0   7 100]]
+分类报告:
+                      precision    recall  f1-score   support
+
+       AddToPlaylist       1.00      1.00      1.00       124
+      BookRestaurant       1.00      1.00      1.00        92
+          GetWeather       1.00      1.00      1.00       104
+           PlayMusic       0.98      0.99      0.98        86
+            RateBook       1.00      1.00      1.00        80
+  SearchCreativeWork       0.93      0.98      0.95       107
+SearchScreeningEvent       1.00      0.93      0.97       107
+
+         avg / total       0.99      0.99      0.99       700
+
+
+
+时间:	2019-02-26 20:25:15
+准确率:	0.9564296520423601
+宏平均精确率:	0.93149482976552
+微平均精确率:	0.9564296520423601
+加权平均精确率:	0.9560604859270754
+宏平均召回率:	0.9291882727027148
+微平均召回率:	0.9564296520423601
+加权平均召回率:	0.9564296520423601
+宏平均F1-score:	0.0
+微平均F1-score:	0.0
+加权平均F1-score:	0
+
+混淆矩阵输出:
+[[  7   0   0 ...   0   0   1]
+ [  0 104   0 ...   0   0   0]
+ [  0   0  43 ...   0   0   0]
+ ...
+ [  0   0   0 ... 143   0   0]
+ [  0   0   0 ...   0  17   0]
+ [  2   1   0 ...   1   2   0]]
+分类报告:
+                              precision    recall  f1-score   support
+
+                     B-album       0.58      0.70      0.64        10
+                    B-artist       0.96      0.97      0.97       107
+               B-best_rating       1.00      1.00      1.00        43
+                      B-city       1.00      0.98      0.99        60
+     B-condition_description       1.00      1.00      1.00        28
+     B-condition_temperature       0.96      1.00      0.98        23
+                   B-country       1.00      0.95      0.98        44
+                   B-cuisine       0.93      0.93      0.93        14
+          B-current_location       1.00      1.00      1.00        14
+               B-entity_name       0.87      0.82      0.84        33
+                  B-facility       1.00      1.00      1.00         3
+                     B-genre       1.00      1.00      1.00         5
+            B-geographic_poi       1.00      1.00      1.00        11
+             B-location_name       1.00      1.00      1.00        24
+                B-movie_name       1.00      0.85      0.92        47
+                B-movie_type       1.00      1.00      1.00        33
+                B-music_item       0.98      0.99      0.99       104
+      B-object_location_type       1.00      1.00      1.00        22
+               B-object_name       0.88      0.93      0.90       147
+B-object_part_of_series_type       1.00      1.00      1.00        11
+             B-object_select       1.00      1.00      1.00        40
+               B-object_type       0.99      0.99      0.99       162
+    B-party_size_description       1.00      1.00      1.00        10
+         B-party_size_number       1.00      1.00      1.00        50
+                  B-playlist       0.96      0.98      0.97       129
+            B-playlist_owner       1.00      1.00      1.00        70
+                       B-poi       0.88      0.88      0.88         8
+               B-rating_unit       1.00      1.00      1.00        40
+              B-rating_value       1.00      1.00      1.00        80
+           B-restaurant_name       0.94      1.00      0.97        15
+           B-restaurant_type       1.00      0.98      0.99        65
+               B-served_dish       0.92      0.92      0.92        12
+                   B-service       1.00      1.00      1.00        24
+                      B-sort       0.97      0.97      0.97        32
+          B-spatial_relation       0.96      1.00      0.98        71
+                     B-state       0.97      0.98      0.97        59
+                 B-timeRange       0.98      0.98      0.98       107
+                     B-track       0.70      0.78      0.74         9
+                      B-year       1.00      1.00      1.00        24
+                     I-album       0.59      0.62      0.60        21
+                    I-artist       0.99      0.99      0.99       112
+                      I-city       1.00      1.00      1.00        19
+                   I-country       1.00      0.96      0.98        25
+                   I-cuisine       1.00      1.00      1.00         1
+          I-current_location       1.00      1.00      1.00         7
+               I-entity_name       1.00      0.93      0.96        54
+                     I-genre       1.00      1.00      1.00         2
+            I-geographic_poi       1.00      1.00      1.00        33
+             I-location_name       1.00      1.00      1.00        30
+                I-movie_name       0.98      0.83      0.90       121
+                I-movie_type       1.00      1.00      1.00        16
+                I-music_item       1.00      1.00      1.00         5
+      I-object_location_type       1.00      1.00      1.00        16
+               I-object_name       0.93      0.97      0.95       399
+I-object_part_of_series_type       0.00      0.00      0.00         1
+               I-object_type       0.99      1.00      0.99        66
+    I-party_size_description       1.00      1.00      1.00        35
+                  I-playlist       0.97      0.95      0.96       231
+            I-playlist_owner       1.00      1.00      1.00         7
+                       I-poi       1.00      0.91      0.95        11
+           I-restaurant_name       0.95      1.00      0.97        36
+           I-restaurant_type       1.00      1.00      1.00         7
+               I-served_dish       1.00      0.50      0.67         4
+                   I-service       1.00      1.00      1.00         5
+                      I-sort       1.00      1.00      1.00         9
+          I-spatial_relation       0.95      1.00      0.98        42
+                     I-state       0.86      1.00      0.92         6
+                 I-timeRange       0.99      0.99      0.99       144
+                     I-track       0.59      0.81      0.68        21
+                           O       0.00      0.00      0.00        29
+
+                 avg / total       0.96      0.96      0.96      3305
+
+
+
+时间:	2019-02-26 20:25:52
+准确率:	0.9564296520423601
+宏平均精确率:	0.93149482976552
+微平均精确率:	0.9564296520423601
+加权平均精确率:	0.9560604859270754
+宏平均召回率:	0.9291882727027148
+微平均召回率:	0.9564296520423601
+加权平均召回率:	0.9564296520423601
+宏平均F1-score:	0.0
+微平均F1-score:	0.0
+加权平均F1-score:	0
+
+混淆矩阵输出:
+[[  7   0   0 ...   0   0   1]
+ [  0 104   0 ...   0   0   0]
+ [  0   0  43 ...   0   0   0]
+ ...
+ [  0   0   0 ... 143   0   0]
+ [  0   0   0 ...   0  17   0]
+ [  2   1   0 ...   1   2   0]]
+分类报告:
+                              precision    recall  f1-score   support
+
+                     B-album       0.58      0.70      0.64        10
+                    B-artist       0.96      0.97      0.97       107
+               B-best_rating       1.00      1.00      1.00        43
+                      B-city       1.00      0.98      0.99        60
+     B-condition_description       1.00      1.00      1.00        28
+     B-condition_temperature       0.96      1.00      0.98        23
+                   B-country       1.00      0.95      0.98        44
+                   B-cuisine       0.93      0.93      0.93        14
+          B-current_location       1.00      1.00      1.00        14
+               B-entity_name       0.87      0.82      0.84        33
+                  B-facility       1.00      1.00      1.00         3
+                     B-genre       1.00      1.00      1.00         5
+            B-geographic_poi       1.00      1.00      1.00        11
+             B-location_name       1.00      1.00      1.00        24
+                B-movie_name       1.00      0.85      0.92        47
+                B-movie_type       1.00      1.00      1.00        33
+                B-music_item       0.98      0.99      0.99       104
+      B-object_location_type       1.00      1.00      1.00        22
+               B-object_name       0.88      0.93      0.90       147
+B-object_part_of_series_type       1.00      1.00      1.00        11
+             B-object_select       1.00      1.00      1.00        40
+               B-object_type       0.99      0.99      0.99       162
+    B-party_size_description       1.00      1.00      1.00        10
+         B-party_size_number       1.00      1.00      1.00        50
+                  B-playlist       0.96      0.98      0.97       129
+            B-playlist_owner       1.00      1.00      1.00        70
+                       B-poi       0.88      0.88      0.88         8
+               B-rating_unit       1.00      1.00      1.00        40
+              B-rating_value       1.00      1.00      1.00        80
+           B-restaurant_name       0.94      1.00      0.97        15
+           B-restaurant_type       1.00      0.98      0.99        65
+               B-served_dish       0.92      0.92      0.92        12
+                   B-service       1.00      1.00      1.00        24
+                      B-sort       0.97      0.97      0.97        32
+          B-spatial_relation       0.96      1.00      0.98        71
+                     B-state       0.97      0.98      0.97        59
+                 B-timeRange       0.98      0.98      0.98       107
+                     B-track       0.70      0.78      0.74         9
+                      B-year       1.00      1.00      1.00        24
+                     I-album       0.59      0.62      0.60        21
+                    I-artist       0.99      0.99      0.99       112
+                      I-city       1.00      1.00      1.00        19
+                   I-country       1.00      0.96      0.98        25
+                   I-cuisine       1.00      1.00      1.00         1
+          I-current_location       1.00      1.00      1.00         7
+               I-entity_name       1.00      0.93      0.96        54
+                     I-genre       1.00      1.00      1.00         2
+            I-geographic_poi       1.00      1.00      1.00        33
+             I-location_name       1.00      1.00      1.00        30
+                I-movie_name       0.98      0.83      0.90       121
+                I-movie_type       1.00      1.00      1.00        16
+                I-music_item       1.00      1.00      1.00         5
+      I-object_location_type       1.00      1.00      1.00        16
+               I-object_name       0.93      0.97      0.95       399
+I-object_part_of_series_type       0.00      0.00      0.00         1
+               I-object_type       0.99      1.00      0.99        66
+    I-party_size_description       1.00      1.00      1.00        35
+                  I-playlist       0.97      0.95      0.96       231
+            I-playlist_owner       1.00      1.00      1.00         7
+                       I-poi       1.00      0.91      0.95        11
+           I-restaurant_name       0.95      1.00      0.97        36
+           I-restaurant_type       1.00      1.00      1.00         7
+               I-served_dish       1.00      0.50      0.67         4
+                   I-service       1.00      1.00      1.00         5
+                      I-sort       1.00      1.00      1.00         9
+          I-spatial_relation       0.95      1.00      0.98        42
+                     I-state       0.86      1.00      0.92         6
+                 I-timeRange       0.99      0.99      0.99       144
+                     I-track       0.59      0.81      0.68        21
+                           O       0.00      0.00      0.00        29
+
+                 avg / total       0.96      0.96      0.96      3305
+
+
+
+时间:	2019-02-26 20:26:19
+准确率:	0.9857142857142858
+宏平均精确率:	0.986602147725126
+微平均精确率:	0.9857142857142858
+加权平均精确率:	0.9863539532382986
+宏平均召回率:	0.9863228490700778
+微平均召回率:	0.9857142857142858
+加权平均召回率:	0.9857142857142858
+宏平均F1-score:	0.9861982841374647
+微平均F1-score:	0.9857142857142858
+加权平均F1-score:	0.9857523952409603
+
+混淆矩阵输出:
+[[124   0   0   0   0   0   0]
+ [  0  92   0   0   0   0   0]
+ [  0   0 104   0   0   0   0]
+ [  0   0   0  85   0   1   0]
+ [  0   0   0   0  80   0   0]
+ [  0   0   0   2   0 105   0]
+ [  0   0   0   0   0   7 100]]
+分类报告:
+                      precision    recall  f1-score   support
+
+       AddToPlaylist       1.00      1.00      1.00       124
+      BookRestaurant       1.00      1.00      1.00        92
+          GetWeather       1.00      1.00      1.00       104
+           PlayMusic       0.98      0.99      0.98        86
+            RateBook       1.00      1.00      1.00        80
+  SearchCreativeWork       0.93      0.98      0.95       107
+SearchScreeningEvent       1.00      0.93      0.97       107
+
+         avg / total       0.99      0.99      0.99       700
+
+
+
+时间:	2019-02-26 20:26:31
+准确率:	0.9857142857142858
+宏平均精确率:	0.986602147725126
+微平均精确率:	0.9857142857142858
+加权平均精确率:	0.9863539532382986
+宏平均召回率:	0.9863228490700778
+微平均召回率:	0.9857142857142858
+加权平均召回率:	0.9857142857142858
+宏平均F1-score:	0.9861982841374647
+微平均F1-score:	0.9857142857142858
+加权平均F1-score:	0.9857523952409603
+
+混淆矩阵输出:
+[[124   0   0   0   0   0   0]
+ [  0  92   0   0   0   0   0]
+ [  0   0 104   0   0   0   0]
+ [  0   0   0  85   0   1   0]
+ [  0   0   0   0  80   0   0]
+ [  0   0   0   2   0 105   0]
+ [  0   0   0   0   0   7 100]]
+分类报告:
+                      precision    recall  f1-score   support
+
+       AddToPlaylist       1.00      1.00      1.00       124
+      BookRestaurant       1.00      1.00      1.00        92
+          GetWeather       1.00      1.00      1.00       104
+           PlayMusic       0.98      0.99      0.98        86
+            RateBook       1.00      1.00      1.00        80
+  SearchCreativeWork       0.93      0.98      0.95       107
+SearchScreeningEvent       1.00      0.93      0.97       107
+
+         avg / total       0.99      0.99      0.99       700
+
+
+
+时间:	2019-02-26 20:26:31
+准确率:	0.9564296520423601
+宏平均精确率:	0.93149482976552
+微平均精确率:	0.9564296520423601
+加权平均精确率:	0.9560604859270754
+宏平均召回率:	0.9291882727027148
+微平均召回率:	0.9564296520423601
+加权平均召回率:	0.9564296520423601
+宏平均F1-score:	0.0
+微平均F1-score:	0.0
+加权平均F1-score:	0
+
+混淆矩阵输出:
+[[  7   0   0 ...   0   0   1]
+ [  0 104   0 ...   0   0   0]
+ [  0   0  43 ...   0   0   0]
+ ...
+ [  0   0   0 ... 143   0   0]
+ [  0   0   0 ...   0  17   0]
+ [  2   1   0 ...   1   2   0]]
+分类报告:
+                              precision    recall  f1-score   support
+
+                     B-album       0.58      0.70      0.64        10
+                    B-artist       0.96      0.97      0.97       107
+               B-best_rating       1.00      1.00      1.00        43
+                      B-city       1.00      0.98      0.99        60
+     B-condition_description       1.00      1.00      1.00        28
+     B-condition_temperature       0.96      1.00      0.98        23
+                   B-country       1.00      0.95      0.98        44
+                   B-cuisine       0.93      0.93      0.93        14
+          B-current_location       1.00      1.00      1.00        14
+               B-entity_name       0.87      0.82      0.84        33
+                  B-facility       1.00      1.00      1.00         3
+                     B-genre       1.00      1.00      1.00         5
+            B-geographic_poi       1.00      1.00      1.00        11
+             B-location_name       1.00      1.00      1.00        24
+                B-movie_name       1.00      0.85      0.92        47
+                B-movie_type       1.00      1.00      1.00        33
+                B-music_item       0.98      0.99      0.99       104
+      B-object_location_type       1.00      1.00      1.00        22
+               B-object_name       0.88      0.93      0.90       147
+B-object_part_of_series_type       1.00      1.00      1.00        11
+             B-object_select       1.00      1.00      1.00        40
+               B-object_type       0.99      0.99      0.99       162
+    B-party_size_description       1.00      1.00      1.00        10
+         B-party_size_number       1.00      1.00      1.00        50
+                  B-playlist       0.96      0.98      0.97       129
+            B-playlist_owner       1.00      1.00      1.00        70
+                       B-poi       0.88      0.88      0.88         8
+               B-rating_unit       1.00      1.00      1.00        40
+              B-rating_value       1.00      1.00      1.00        80
+           B-restaurant_name       0.94      1.00      0.97        15
+           B-restaurant_type       1.00      0.98      0.99        65
+               B-served_dish       0.92      0.92      0.92        12
+                   B-service       1.00      1.00      1.00        24
+                      B-sort       0.97      0.97      0.97        32
+          B-spatial_relation       0.96      1.00      0.98        71
+                     B-state       0.97      0.98      0.97        59
+                 B-timeRange       0.98      0.98      0.98       107
+                     B-track       0.70      0.78      0.74         9
+                      B-year       1.00      1.00      1.00        24
+                     I-album       0.59      0.62      0.60        21
+                    I-artist       0.99      0.99      0.99       112
+                      I-city       1.00      1.00      1.00        19
+                   I-country       1.00      0.96      0.98        25
+                   I-cuisine       1.00      1.00      1.00         1
+          I-current_location       1.00      1.00      1.00         7
+               I-entity_name       1.00      0.93      0.96        54
+                     I-genre       1.00      1.00      1.00         2
+            I-geographic_poi       1.00      1.00      1.00        33
+             I-location_name       1.00      1.00      1.00        30
+                I-movie_name       0.98      0.83      0.90       121
+                I-movie_type       1.00      1.00      1.00        16
+                I-music_item       1.00      1.00      1.00         5
+      I-object_location_type       1.00      1.00      1.00        16
+               I-object_name       0.93      0.97      0.95       399
+I-object_part_of_series_type       0.00      0.00      0.00         1
+               I-object_type       0.99      1.00      0.99        66
+    I-party_size_description       1.00      1.00      1.00        35
+                  I-playlist       0.97      0.95      0.96       231
+            I-playlist_owner       1.00      1.00      1.00         7
+                       I-poi       1.00      0.91      0.95        11
+           I-restaurant_name       0.95      1.00      0.97        36
+           I-restaurant_type       1.00      1.00      1.00         7
+               I-served_dish       1.00      0.50      0.67         4
+                   I-service       1.00      1.00      1.00         5
+                      I-sort       1.00      1.00      1.00         9
+          I-spatial_relation       0.95      1.00      0.98        42
+                     I-state       0.86      1.00      0.92         6
+                 I-timeRange       0.99      0.99      0.99       144
+                     I-track       0.59      0.81      0.68        21
+                           O       0.00      0.00      0.00        29
+
+                 avg / total       0.96      0.96      0.96      3305
+
+
+
+****************************************************************************************************
+****************************atis_join_task_epoch10_test1399ckpt****************************
+****************************************************************************************************
+时间:	2019-02-26 20:16:42
+准确率:	0.9586619526788143
+宏平均精确率:	0.7969934132851725
+微平均精确率:	0.9586619526788143
+加权平均精确率:	0.9579887467470768
+宏平均召回率:	0.7899101940217094
+微平均召回率:	0.9586619526788143
+加权平均召回率:	0.9586619526788143
+宏平均F1-score:	0.0
+微平均F1-score:	0.0
+加权平均F1-score:	0
+
+混淆矩阵输出:
+[[ 30   2   0 ...   0   0   0]
+ [  0  32   0 ...   0   0   0]
+ [  0   0 101 ...   0   0   0]
+ ...
+ [  0   0   0 ...   1   0   0]
+ [  0   0   0 ...   0   0   1]
+ [  0   4   0 ...   0   0   0]]
+分类报告:
+                              precision    recall  f1-score   support
+
+             B-aircraft_code       1.00      0.91      0.95        33
+              B-airline_code       0.80      0.94      0.86        34
+              B-airline_name       1.00      1.00      1.00       101
+              B-airport_code       1.00      0.56      0.71         9
+              B-airport_name       0.80      0.38      0.52        21
+ B-arrive_date.date_relative       0.67      1.00      0.80         2
+      B-arrive_date.day_name       0.73      1.00      0.85        11
+    B-arrive_date.day_number       0.71      0.83      0.77         6
+    B-arrive_date.month_name       0.71      0.83      0.77         6
+      B-arrive_time.end_time       0.89      1.00      0.94         8
+ B-arrive_time.period_of_day       0.75      1.00      0.86         6
+    B-arrive_time.start_time       0.89      1.00      0.94         8
+          B-arrive_time.time       0.94      1.00      0.97        34
+ B-arrive_time.time_relative       0.97      0.97      0.97        31
+             B-booking_class       0.00      0.00      0.00         1
+                 B-city_name       0.86      0.63      0.73        57
+                B-class_type       0.96      1.00      0.98        24
+               B-compartment       0.00      0.00      0.00         1
+                   B-connect       1.00      1.00      1.00         6
+             B-cost_relative       1.00      1.00      1.00        37
+                  B-day_name       0.00      0.00      0.00         2
+                 B-days_code       1.00      1.00      1.00         1
+ B-depart_date.date_relative       1.00      1.00      1.00        17
+      B-depart_date.day_name       0.99      0.99      0.99       212
+    B-depart_date.day_number       0.98      0.96      0.97        55
+    B-depart_date.month_name       0.98      0.96      0.97        56
+B-depart_date.today_relative       1.00      0.89      0.94         9
+          B-depart_date.year       1.00      1.00      1.00         3
+      B-depart_time.end_time       1.00      0.67      0.80         3
+    B-depart_time.period_mod       0.83      1.00      0.91         5
+ B-depart_time.period_of_day       1.00      0.93      0.96       130
+    B-depart_time.start_time       1.00      0.67      0.80         3
+          B-depart_time.time       0.89      1.00      0.94        57
+ B-depart_time.time_relative       0.98      0.98      0.98        65
+                   B-economy       1.00      1.00      1.00         6
+               B-fare_amount       1.00      1.00      1.00         2
+           B-fare_basis_code       0.85      1.00      0.92        17
+                    B-flight       0.00      0.00      0.00         1
+               B-flight_days       1.00      1.00      1.00        10
+                B-flight_mod       0.92      1.00      0.96        24
+             B-flight_number       0.85      1.00      0.92        11
+               B-flight_stop       1.00      1.00      1.00        21
+               B-flight_time       1.00      1.00      1.00         1
+      B-fromloc.airport_code       0.56      1.00      0.71         5
+      B-fromloc.airport_name       0.46      1.00      0.63        12
+         B-fromloc.city_name       0.99      1.00      0.99       704
+        B-fromloc.state_code       1.00      1.00      1.00        23
+        B-fromloc.state_name       0.94      1.00      0.97        17
+                      B-meal       0.94      1.00      0.97        16
+                 B-meal_code       0.00      0.00      0.00         1
+          B-meal_description       1.00      1.00      1.00        10
+                       B-mod       1.00      0.50      0.67         2
+                        B-or       0.43      1.00      0.60         3
+             B-period_of_day       1.00      0.50      0.67         4
+          B-restriction_code       1.00      1.00      1.00         4
+ B-return_date.date_relative       0.50      0.33      0.40         3
+      B-return_date.day_name       0.00      0.00      0.00         2
+                B-round_trip       0.99      0.99      0.99        73
+                B-state_code       1.00      1.00      1.00         1
+                B-state_name       0.00      0.00      0.00         9
+      B-stoploc.airport_code       0.00      0.00      0.00         1
+         B-stoploc.city_name       0.95      1.00      0.98        20
+        B-toloc.airport_code       1.00      0.75      0.86         4
+        B-toloc.airport_name       1.00      1.00      1.00         3
+           B-toloc.city_name       0.98      1.00      0.99       716
+        B-toloc.country_name       1.00      1.00      1.00         1
+          B-toloc.state_code       1.00      1.00      1.00        18
+          B-toloc.state_name       0.93      0.93      0.93        28
+            B-transport_type       1.00      1.00      1.00        10
+              I-airline_name       1.00      1.00      1.00        65
+              I-airport_name       0.85      0.38      0.52        29
+    I-arrive_date.day_number       0.00      0.00      0.00         0
+      I-arrive_time.end_time       0.89      1.00      0.94         8
+    I-arrive_time.start_time       1.00      1.00      1.00         1
+          I-arrive_time.time       1.00      1.00      1.00        35
+ I-arrive_time.time_relative       1.00      1.00      1.00         4
+                 I-city_name       1.00      0.67      0.80        30
+                I-class_type       1.00      1.00      1.00        17
+             I-cost_relative       1.00      0.67      0.80         3
+    I-depart_date.day_number       1.00      0.93      0.97        15
+      I-depart_time.end_time       1.00      0.67      0.80         3
+ I-depart_time.period_of_day       1.00      1.00      1.00         1
+    I-depart_time.start_time       1.00      1.00      1.00         1
+          I-depart_time.time       1.00      1.00      1.00        52
+ I-depart_time.time_relative       0.00      0.00      0.00         1
+               I-fare_amount       1.00      1.00      1.00         2
+                I-flight_mod       1.00      0.17      0.29         6
+             I-flight_number       0.00      0.00      0.00         1
+               I-flight_time       1.00      1.00      1.00         1
+      I-fromloc.airport_name       0.44      1.00      0.61        15
+         I-fromloc.city_name       0.99      1.00      0.99       177
+        I-fromloc.state_name       1.00      1.00      1.00         1
+          I-restriction_code       1.00      1.00      1.00         3
+ I-return_date.date_relative       0.75      1.00      0.86         3
+                I-round_trip       1.00      1.00      1.00        71
+                I-state_name       0.00      0.00      0.00         1
+         I-stoploc.city_name       0.77      1.00      0.87        10
+        I-toloc.airport_name       1.00      1.00      1.00         3
+           I-toloc.city_name       0.98      0.99      0.98       265
+          I-toloc.state_name       1.00      1.00      1.00         1
+            I-transport_type       0.00      0.00      0.00         1
+                           O       0.00      0.00      0.00        14
+
+                 avg / total       0.96      0.96      0.95      3677
+
+
+
+时间:	2019-02-26 20:27:36
+准确率:	0.9641657334826428
+宏平均精确率:	0.6576825526299321
+微平均精确率:	0.9641657334826428
+加权平均精确率:	0.9586651910571871
+宏平均召回率:	0.6842475386779185
+微平均召回率:	0.9641657334826428
+加权平均召回率:	0.9641657334826428
+宏平均F1-score:	0.5065400600551058
+微平均F1-score:	0.9641657334826428
+加权平均F1-score:	0.9596558916225824
+
+混淆矩阵输出:
+[[ 33   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+    0   0]
+ [  0   8   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+    0   1]
+ [  0   0  48   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+    0   0]
+ [  0   0   1   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+    0   0]
+ [  0   0   0   0  38   0   0   0   0   0   0   0   0   0   0   0   0   0
+    0   0]
+ [  0   0   0   0   0  16   0   2   0   0   0   0   0   0   0   0   0   0
+    0   0]
+ [  0   0   0   0   0   0  17   0   0   0   0   0   0   0   0   0   2   0
+    0   2]
+ [  0   0   0   0   0   0   0   4   0   0   2   0   0   0   0   0   0   0
+    0   0]
+ [  0   0   0   0   0   0   0   0   0   0   2   0   0   0   0   0   0   0
+    0   0]
+ [  0   0   0   0   0   0   0   0   0  10   0   0   0   0   0   0   0   0
+    0   0]
+ [  0   0   0   0   1   0   0   0   0   0 626   1   0   0   0   0   0   0
+    0   4]
+ [  0   0   3   0   0   0   0   0   0   0   2   7   0   0   0   0   0   0
+    0   0]
+ [  0   0   0   0   0   0   0   0   0   0   1   0   0   0   0   0   0   0
+    0   0]
+ [  0   0   0   0   0   0   0   0   0   0   0   0   0   8   0   0   0   0
+    0   0]
+ [  0   0   0   0   0   0   0   0   0   0   0   0   0   1   0   0   0   0
+    0   0]
+ [  0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   1   0   0
+    0   0]
+ [  0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   6   1
+    0   0]
+ [  0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0  36
+    0   0]
+ [  1   0   4   0   0   0   0   0   0   1   0   0   0   0   0   0   0   0
+    0   0]
+ [  0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+    0   3]]
+分类报告:
+                             precision    recall  f1-score   support
+
+          atis_abbreviation       0.97      1.00      0.99        33
+              atis_aircraft       1.00      0.89      0.94         9
+               atis_airfare       0.86      1.00      0.92        48
+   atis_airfare#atis_flight       0.00      0.00      0.00         1
+               atis_airline       0.97      1.00      0.99        38
+               atis_airport       1.00      0.89      0.94        18
+              atis_capacity       1.00      0.81      0.89        21
+                  atis_city       0.67      0.67      0.67         6
+              atis_day_name       0.00      0.00      0.00         2
+              atis_distance       0.91      1.00      0.95        10
+                atis_flight       0.99      0.99      0.99       632
+   atis_flight#atis_airfare       0.88      0.58      0.70        12
+   atis_flight#atis_airline       0.00      0.00      0.00         1
+             atis_flight_no       0.89      1.00      0.94         8
+atis_flight_no#atis_airline       0.00      0.00      0.00         1
+           atis_flight_time       1.00      1.00      1.00         1
+           atis_ground_fare       0.75      0.86      0.80         7
+        atis_ground_service       0.97      1.00      0.99        36
+                  atis_meal       0.00      0.00      0.00         6
+              atis_quantity       0.30      1.00      0.46         3
+
+                avg / total       0.96      0.96      0.96       893
+
+
+
+时间:	2019-02-26 20:27:36
+准确率:	0.9586619526788143
+宏平均精确率:	0.7969934132851725
+微平均精确率:	0.9586619526788143
+加权平均精确率:	0.9579887467470768
+宏平均召回率:	0.7899101940217094
+微平均召回率:	0.9586619526788143
+加权平均召回率:	0.9586619526788143
+宏平均F1-score:	0.0
+微平均F1-score:	0.0
+加权平均F1-score:	0
+
+混淆矩阵输出:
+[[ 30   2   0 ...   0   0   0]
+ [  0  32   0 ...   0   0   0]
+ [  0   0 101 ...   0   0   0]
+ ...
+ [  0   0   0 ...   1   0   0]
+ [  0   0   0 ...   0   0   1]
+ [  0   4   0 ...   0   0   0]]
+分类报告:
+                              precision    recall  f1-score   support
+
+             B-aircraft_code       1.00      0.91      0.95        33
+              B-airline_code       0.80      0.94      0.86        34
+              B-airline_name       1.00      1.00      1.00       101
+              B-airport_code       1.00      0.56      0.71         9
+              B-airport_name       0.80      0.38      0.52        21
+ B-arrive_date.date_relative       0.67      1.00      0.80         2
+      B-arrive_date.day_name       0.73      1.00      0.85        11
+    B-arrive_date.day_number       0.71      0.83      0.77         6
+    B-arrive_date.month_name       0.71      0.83      0.77         6
+      B-arrive_time.end_time       0.89      1.00      0.94         8
+ B-arrive_time.period_of_day       0.75      1.00      0.86         6
+    B-arrive_time.start_time       0.89      1.00      0.94         8
+          B-arrive_time.time       0.94      1.00      0.97        34
+ B-arrive_time.time_relative       0.97      0.97      0.97        31
+             B-booking_class       0.00      0.00      0.00         1
+                 B-city_name       0.86      0.63      0.73        57
+                B-class_type       0.96      1.00      0.98        24
+               B-compartment       0.00      0.00      0.00         1
+                   B-connect       1.00      1.00      1.00         6
+             B-cost_relative       1.00      1.00      1.00        37
+                  B-day_name       0.00      0.00      0.00         2
+                 B-days_code       1.00      1.00      1.00         1
+ B-depart_date.date_relative       1.00      1.00      1.00        17
+      B-depart_date.day_name       0.99      0.99      0.99       212
+    B-depart_date.day_number       0.98      0.96      0.97        55
+    B-depart_date.month_name       0.98      0.96      0.97        56
+B-depart_date.today_relative       1.00      0.89      0.94         9
+          B-depart_date.year       1.00      1.00      1.00         3
+      B-depart_time.end_time       1.00      0.67      0.80         3
+    B-depart_time.period_mod       0.83      1.00      0.91         5
+ B-depart_time.period_of_day       1.00      0.93      0.96       130
+    B-depart_time.start_time       1.00      0.67      0.80         3
+          B-depart_time.time       0.89      1.00      0.94        57
+ B-depart_time.time_relative       0.98      0.98      0.98        65
+                   B-economy       1.00      1.00      1.00         6
+               B-fare_amount       1.00      1.00      1.00         2
+           B-fare_basis_code       0.85      1.00      0.92        17
+                    B-flight       0.00      0.00      0.00         1
+               B-flight_days       1.00      1.00      1.00        10
+                B-flight_mod       0.92      1.00      0.96        24
+             B-flight_number       0.85      1.00      0.92        11
+               B-flight_stop       1.00      1.00      1.00        21
+               B-flight_time       1.00      1.00      1.00         1
+      B-fromloc.airport_code       0.56      1.00      0.71         5
+      B-fromloc.airport_name       0.46      1.00      0.63        12
+         B-fromloc.city_name       0.99      1.00      0.99       704
+        B-fromloc.state_code       1.00      1.00      1.00        23
+        B-fromloc.state_name       0.94      1.00      0.97        17
+                      B-meal       0.94      1.00      0.97        16
+                 B-meal_code       0.00      0.00      0.00         1
+          B-meal_description       1.00      1.00      1.00        10
+                       B-mod       1.00      0.50      0.67         2
+                        B-or       0.43      1.00      0.60         3
+             B-period_of_day       1.00      0.50      0.67         4
+          B-restriction_code       1.00      1.00      1.00         4
+ B-return_date.date_relative       0.50      0.33      0.40         3
+      B-return_date.day_name       0.00      0.00      0.00         2
+                B-round_trip       0.99      0.99      0.99        73
+                B-state_code       1.00      1.00      1.00         1
+                B-state_name       0.00      0.00      0.00         9
+      B-stoploc.airport_code       0.00      0.00      0.00         1
+         B-stoploc.city_name       0.95      1.00      0.98        20
+        B-toloc.airport_code       1.00      0.75      0.86         4
+        B-toloc.airport_name       1.00      1.00      1.00         3
+           B-toloc.city_name       0.98      1.00      0.99       716
+        B-toloc.country_name       1.00      1.00      1.00         1
+          B-toloc.state_code       1.00      1.00      1.00        18
+          B-toloc.state_name       0.93      0.93      0.93        28
+            B-transport_type       1.00      1.00      1.00        10
+              I-airline_name       1.00      1.00      1.00        65
+              I-airport_name       0.85      0.38      0.52        29
+    I-arrive_date.day_number       0.00      0.00      0.00         0
+      I-arrive_time.end_time       0.89      1.00      0.94         8
+    I-arrive_time.start_time       1.00      1.00      1.00         1
+          I-arrive_time.time       1.00      1.00      1.00        35
+ I-arrive_time.time_relative       1.00      1.00      1.00         4
+                 I-city_name       1.00      0.67      0.80        30
+                I-class_type       1.00      1.00      1.00        17
+             I-cost_relative       1.00      0.67      0.80         3
+    I-depart_date.day_number       1.00      0.93      0.97        15
+      I-depart_time.end_time       1.00      0.67      0.80         3
+ I-depart_time.period_of_day       1.00      1.00      1.00         1
+    I-depart_time.start_time       1.00      1.00      1.00         1
+          I-depart_time.time       1.00      1.00      1.00        52
+ I-depart_time.time_relative       0.00      0.00      0.00         1
+               I-fare_amount       1.00      1.00      1.00         2
+                I-flight_mod       1.00      0.17      0.29         6
+             I-flight_number       0.00      0.00      0.00         1
+               I-flight_time       1.00      1.00      1.00         1
+      I-fromloc.airport_name       0.44      1.00      0.61        15
+         I-fromloc.city_name       0.99      1.00      0.99       177
+        I-fromloc.state_name       1.00      1.00      1.00         1
+          I-restriction_code       1.00      1.00      1.00         3
+ I-return_date.date_relative       0.75      1.00      0.86         3
+                I-round_trip       1.00      1.00      1.00        71
+                I-state_name       0.00      0.00      0.00         1
+         I-stoploc.city_name       0.77      1.00      0.87        10
+        I-toloc.airport_name       1.00      1.00      1.00         3
+           I-toloc.city_name       0.98      0.99      0.98       265
+          I-toloc.state_name       1.00      1.00      1.00         1
+            I-transport_type       0.00      0.00      0.00         1
+                           O       0.00      0.00      0.00        14
+
+                 avg / total       0.96      0.96      0.95      3677
+
+
+

@@ -1,0 +1,218 @@
+时间:	2019-12-03 15:18:04
+准确率:	0.9764837625979843
+宏平均精确率:	0.6948830139834943
+微平均精确率:	0.9764837625979843
+加权平均精确率:	0.9751264947939539
+宏平均召回率:	0.713644670245032
+微平均召回率:	0.9764837625979843
+加权平均召回率:	0.9764837625979843
+宏平均F1-score:	0.5568218399380129
+微平均F1-score:	0.9764837625979843
+加权平均F1-score:	0.9741401155452318
+
+混淆矩阵输出:
+[[ 33   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+    0   0   0]
+ [  0   8   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+    0   0   1]
+ [  0   0  48   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+    0   0   0]
+ [  0   0   1   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+    0   0   0]
+ [  0   0   0   0  38   0   0   0   0   0   0   0   0   0   0   0   0   0
+    0   0   0]
+ [  0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+    0   0   0]
+ [  0   0   0   0   0   0  18   0   0   0   0   0   0   0   0   0   0   0
+    0   0   0]
+ [  0   0   0   0   0   0   0  21   0   0   0   0   0   0   0   0   0   0
+    0   0   0]
+ [  0   0   0   0   0   0   0   0   6   0   0   0   0   0   0   0   0   0
+    0   0   0]
+ [  0   0   0   0   0   0   0   0   0   0   0   1   0   0   0   0   1   0
+    0   0   0]
+ [  0   0   0   0   0   0   0   0   0   0  10   0   0   0   0   0   0   0
+    0   0   0]
+ [  0   0   0   0   0   0   1   0   0   0   0 626   1   0   0   0   0   0
+    0   0   4]
+ [  0   0   0   0   0   0   0   0   0   0   0   7   5   0   0   0   0   0
+    0   0   0]
+ [  0   0   0   0   0   0   0   0   0   0   0   1   0   0   0   0   0   0
+    0   0   0]
+ [  0   0   0   0   0   0   0   0   0   0   0   0   0   0   8   0   0   0
+    0   0   0]
+ [  0   0   0   0   0   1   0   0   0   0   0   0   0   0   0   0   0   0
+    0   0   0]
+ [  0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   1   0
+    0   0   0]
+ [  0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   6
+    1   0   0]
+ [  0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+   36   0   0]
+ [  0   0   0   0   0   0   0   0   0   0   0   1   0   0   0   0   0   0
+    0   5   0]
+ [  0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+    0   0   3]]
+分类报告:
+                             precision    recall  f1-score   support
+
+          atis_abbreviation       1.00      1.00      1.00        33
+              atis_aircraft       1.00      0.89      0.94         9
+               atis_airfare       0.98      1.00      0.99        48
+   atis_airfare#atis_flight       0.00      0.00      0.00         1
+               atis_airline       1.00      1.00      1.00        38
+atis_airline#atis_flight_no       0.00      0.00      0.00         0
+               atis_airport       0.95      1.00      0.97        18
+              atis_capacity       1.00      1.00      1.00        21
+                  atis_city       1.00      1.00      1.00         6
+              atis_day_name       0.00      0.00      0.00         2
+              atis_distance       1.00      1.00      1.00        10
+                atis_flight       0.98      0.99      0.99       632
+   atis_flight#atis_airfare       0.83      0.42      0.56        12
+   atis_flight#atis_airline       0.00      0.00      0.00         1
+             atis_flight_no       1.00      1.00      1.00         8
+atis_flight_no#atis_airline       0.00      0.00      0.00         1
+           atis_flight_time       0.50      1.00      0.67         1
+           atis_ground_fare       1.00      0.86      0.92         7
+        atis_ground_service       0.97      1.00      0.99        36
+                  atis_meal       1.00      0.83      0.91         6
+              atis_quantity       0.38      1.00      0.55         3
+
+                   accuracy                           0.98       893
+                  macro avg       0.69      0.71      0.69       893
+               weighted avg       0.98      0.98      0.97       893
+
+
+
+时间:	2019-12-03 15:18:04
+准确率:	0.9551752241238793
+宏平均精确率:	0.8168164504259258
+微平均精确率:	0.9551752241238793
+加权平均精确率:	0.9533279446565879
+宏平均召回率:	0.8119494819792376
+微平均召回率:	0.9551752241238793
+加权平均召回率:	0.9551752241238793
+宏平均F1-score:	0.0
+微平均F1-score:	0.0
+加权平均F1-score:	0
+
+混淆矩阵输出:
+[[ 31   1   0 ...   0   0   0]
+ [  0  32   0 ...   0   0   0]
+ [  0   0 101 ...   0   0   0]
+ ...
+ [  0   0   0 ...   1   0   0]
+ [  0   0   0 ...   0   0   1]
+ [  0   4   0 ...   0   0   0]]
+分类报告:
+                              precision    recall  f1-score   support
+
+             B-aircraft_code       1.00      0.94      0.97        33
+              B-airline_code       0.86      0.94      0.90        34
+              B-airline_name       1.00      1.00      1.00       101
+              B-airport_code       0.80      0.44      0.57         9
+              B-airport_name       0.82      0.43      0.56        21
+ B-arrive_date.date_relative       0.67      1.00      0.80         2
+      B-arrive_date.day_name       0.79      1.00      0.88        11
+    B-arrive_date.day_number       0.71      0.83      0.77         6
+    B-arrive_date.month_name       0.71      0.83      0.77         6
+      B-arrive_time.end_time       1.00      1.00      1.00         8
+ B-arrive_time.period_of_day       0.75      1.00      0.86         6
+    B-arrive_time.start_time       0.89      1.00      0.94         8
+          B-arrive_time.time       0.94      0.97      0.96        34
+ B-arrive_time.time_relative       0.94      0.94      0.94        31
+             B-booking_class       0.00      0.00      0.00         1
+                 B-city_name       0.85      0.58      0.69        57
+                B-class_type       0.96      1.00      0.98        24
+               B-compartment       0.00      0.00      0.00         1
+                   B-connect       1.00      1.00      1.00         6
+             B-cost_relative       1.00      0.97      0.99        37
+                  B-day_name       1.00      0.50      0.67         2
+                 B-days_code       1.00      1.00      1.00         1
+ B-depart_date.date_relative       1.00      1.00      1.00        17
+      B-depart_date.day_name       1.00      0.99      0.99       212
+    B-depart_date.day_number       0.98      0.96      0.97        55
+    B-depart_date.month_name       0.98      0.96      0.97        56
+B-depart_date.today_relative       1.00      0.89      0.94         9
+          B-depart_date.year       1.00      1.00      1.00         3
+      B-depart_time.end_time       1.00      1.00      1.00         3
+    B-depart_time.period_mod       1.00      1.00      1.00         5
+ B-depart_time.period_of_day       1.00      0.91      0.95       130
+    B-depart_time.start_time       1.00      0.67      0.80         3
+          B-depart_time.time       0.88      1.00      0.93        57
+ B-depart_time.time_relative       0.97      0.98      0.98        65
+                   B-economy       1.00      1.00      1.00         6
+               B-fare_amount       1.00      1.00      1.00         2
+           B-fare_basis_code       0.85      1.00      0.92        17
+                    B-flight       0.00      0.00      0.00         1
+               B-flight_days       1.00      1.00      1.00        10
+                B-flight_mod       0.83      1.00      0.91        24
+             B-flight_number       0.85      1.00      0.92        11
+               B-flight_stop       1.00      1.00      1.00        21
+               B-flight_time       0.50      1.00      0.67         1
+      B-fromloc.airport_code       0.50      1.00      0.67         5
+      B-fromloc.airport_name       0.48      1.00      0.65        12
+         B-fromloc.city_name       0.99      1.00      0.99       704
+        B-fromloc.state_code       1.00      1.00      1.00        23
+        B-fromloc.state_name       0.94      1.00      0.97        17
+                      B-meal       0.94      1.00      0.97        16
+                 B-meal_code       1.00      1.00      1.00         1
+          B-meal_description       1.00      1.00      1.00        10
+                       B-mod       1.00      0.50      0.67         2
+                        B-or       0.38      1.00      0.55         3
+             B-period_of_day       1.00      0.75      0.86         4
+          B-restriction_code       1.00      1.00      1.00         4
+ B-return_date.date_relative       0.50      0.33      0.40         3
+      B-return_date.day_name       1.00      0.50      0.67         2
+                B-round_trip       1.00      0.97      0.99        73
+                B-state_code       1.00      1.00      1.00         1
+                B-state_name       0.00      0.00      0.00         9
+      B-stoploc.airport_code       0.00      0.00      0.00         1
+         B-stoploc.city_name       1.00      1.00      1.00        20
+        B-toloc.airport_code       1.00      0.75      0.86         4
+        B-toloc.airport_name       1.00      1.00      1.00         3
+           B-toloc.city_name       0.97      0.99      0.98       716
+        B-toloc.country_name       1.00      1.00      1.00         1
+          B-toloc.state_code       1.00      1.00      1.00        18
+          B-toloc.state_name       0.90      1.00      0.95        28
+            B-transport_type       1.00      1.00      1.00        10
+              I-airline_name       1.00      1.00      1.00        65
+              I-airport_name       0.86      0.41      0.56        29
+    I-arrive_date.day_number       0.00      0.00      0.00         0
+      I-arrive_time.end_time       0.89      1.00      0.94         8
+    I-arrive_time.start_time       1.00      1.00      1.00         1
+          I-arrive_time.time       1.00      0.97      0.99        35
+ I-arrive_time.time_relative       1.00      1.00      1.00         4
+                 I-city_name       0.88      0.47      0.61        30
+                I-class_type       1.00      1.00      1.00        17
+             I-cost_relative       1.00      0.67      0.80         3
+    I-depart_date.day_number       1.00      0.93      0.97        15
+      I-depart_time.end_time       1.00      0.67      0.80         3
+ I-depart_time.period_of_day       1.00      1.00      1.00         1
+    I-depart_time.start_time       1.00      1.00      1.00         1
+          I-depart_time.time       0.93      1.00      0.96        52
+ I-depart_time.time_relative       0.00      0.00      0.00         1
+               I-fare_amount       1.00      1.00      1.00         2
+                I-flight_mod       0.50      0.17      0.25         6
+             I-flight_number       0.00      0.00      0.00         1
+               I-flight_time       1.00      1.00      1.00         1
+      I-fromloc.airport_name       0.45      1.00      0.62        15
+         I-fromloc.city_name       0.98      1.00      0.99       177
+        I-fromloc.state_name       1.00      1.00      1.00         1
+          I-restriction_code       1.00      1.00      1.00         3
+ I-return_date.date_relative       0.75      1.00      0.86         3
+                I-round_trip       1.00      1.00      1.00        71
+                I-state_name       0.00      0.00      0.00         1
+         I-stoploc.city_name       1.00      1.00      1.00        10
+        I-toloc.airport_name       1.00      1.00      1.00         3
+           I-toloc.city_name       0.96      0.99      0.97       265
+          I-toloc.state_name       1.00      1.00      1.00         1
+            I-transport_type       0.00      0.00      0.00         1
+                           O       0.00      0.00      0.00        18
+
+                    accuracy                           0.96      3681
+                   macro avg       0.82      0.81      0.80      3681
+                weighted avg       0.95      0.96      0.95      3681
+
+
+
