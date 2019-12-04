@@ -356,7 +356,7 @@ tornado==5.1.1
 tqdm==4.31.1
 traitlets==4.3.2
 transformers==2.1.1
-Twisted==18.9.0
+Twisted==19.7.0
 typed-ast==1.1.0
 typing==3.6.6
 ujson==1.35
