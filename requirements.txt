@@ -187,7 +187,7 @@ neobolt==1.7.4
 neotime==1.7.4
 neptune-cli==2.8.16
 networkx==2.2
-nltk==3.4.1
+nltk==3.4.5
 nose==1.3.7
 notebook==5.7.0
 numba==0.38.0
