@@ -245,7 +245,7 @@ pydot-ng==2.0.0
 pyenchant==2.0.0
 pyfasttext==0.4.5
 pyflakes==2.0.0
-Pygments==2.3.1
+Pygments==2.7.4
 PyHamcrest==1.9.0
 pyhocon==0.3.51
 PyJWT==1.6.4
