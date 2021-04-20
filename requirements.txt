@@ -227,7 +227,7 @@ prompt-toolkit==2.0.4
 protobuf==3.6.1
 psutil==5.4.7
 ptyprocess==0.5.2
-py==1.7.0
+py==1.10.0
 py2neo==3.1.2
 pyaml==17.12.1
 pyasn1==0.4.4
