@@ -292,7 +292,7 @@ requests-oauthlib==1.0.0
 responses==0.10.1
 rope==0.11.0
 rouge==0.3.1
-rsa==3.4.2
+rsa==4.7
 RSeQC==3.0.0
 s3fs==0.1.6
 s3transfer==0.1.13
