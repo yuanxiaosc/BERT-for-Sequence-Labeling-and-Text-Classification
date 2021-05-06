@@ -94,7 +94,7 @@ featuretools==0.3.1
 filelock==3.0.4
 flaky==3.4.0
 Flask==1.1.1
-Flask-Cors==3.0.8
+Flask-Cors==3.0.9
 Flask-RESTful==0.3.6
 Flask-Uploads==0.2.1
 ftfy==5.5.1
