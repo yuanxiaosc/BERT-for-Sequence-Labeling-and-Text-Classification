@@ -99,7 +99,7 @@ Then you can find the predicted output of the model and the output test results 
 |calculate_model_score.py |for evaluation model |
 
 
-## Model Socres
+## Model Scores
 
 **The following model scores are model scores without careful adjustment of model parameters, that is to say, the scores can continue to improve!**
 
