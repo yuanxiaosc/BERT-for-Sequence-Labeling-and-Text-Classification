@@ -63,7 +63,7 @@ cymem==2.0.2
 cysignals==1.9.0
 Cython==0.29
 cytoolz==0.9.0.1
-dask==0.19.4
+dask==2021.10.0
 dataclasses==0.7
 datashape==0.5.4
 de-core-news-sm==2.0.0
