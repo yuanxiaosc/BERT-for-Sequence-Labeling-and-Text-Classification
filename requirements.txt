@@ -248,7 +248,7 @@ pyflakes==2.0.0
 Pygments==2.3.1
 PyHamcrest==1.9.0
 pyhocon==0.3.51
-PyJWT==1.6.4
+PyJWT==2.4.0
 pykwalify==1.5.2
 pylint==2.1.1
 pymongo==3.7.2
