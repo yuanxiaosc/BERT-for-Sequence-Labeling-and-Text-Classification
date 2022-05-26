@@ -359,7 +359,7 @@ transformers==2.1.1
 Twisted==18.9.0
 typed-ast==1.1.0
 typing==3.6.6
-ujson==1.35
+ujson==5.2.0
 unicodecsv==0.14.1
 Unidecode==1.1.1
 urllib3==1.22
