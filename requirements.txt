@@ -113,7 +113,7 @@ greenlet==0.4.15
 grpcio==1.15.0
 h5py==2.8.0
 heapdict==1.0.0
-html5lib==0.9999999
+html5lib==0.999999999
 humanize==0.5.1
 hyperlink==18.0.0
 hyperopt==0.2.1
