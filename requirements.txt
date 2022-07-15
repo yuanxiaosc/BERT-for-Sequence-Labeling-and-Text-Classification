@@ -70,7 +70,7 @@ de-core-news-sm==2.0.0
 decorator==4.3.0
 defusedxml==0.5.0
 dill==0.2.8.2
-distributed==1.23.3
+distributed==2021.10.0
 Django==2.1.7
 docker==3.5.1
 docker-pycreds==0.3.0
