@@ -166,7 +166,7 @@ MarkupSafe==1.0
 matchzoo-py==1.0
 matplotlib==3.0.0
 mccabe==0.6.1
-mistune==0.8.4
+mistune==2.0.3
 mkl==2019.0
 mkl-fft==1.0.6
 mkl-random==1.0.1.1
