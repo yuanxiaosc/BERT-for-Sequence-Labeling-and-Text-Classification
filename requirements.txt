@@ -180,7 +180,7 @@ msgpack-python==0.5.6
 multipledispatch==0.6.0
 murmurhash==1.0.1
 navigator-updater==0.2.1
-nbconvert==5.4.0
+nbconvert==6.3.0
 nbformat==4.4.0
 neo4j-driver==1.6.2
 neobolt==1.7.4
